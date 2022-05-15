@@ -33,7 +33,9 @@ class MyApp extends StatelessWidget {
           );
         },
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(),
+        theme: ThemeData(
+          scaffoldBackgroundColor: Colors.white,
+        ),
         home: const LoginScreen(),
       )
     );

@@ -1,3 +1,4 @@
+import 'package:ad_samy/shared/components/component.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,10 +8,21 @@ class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    var emailController = TextEditingController();
+    var passwordController = TextEditingController();
     Size size = MediaQuery.of(context).size;
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){},
+          child: Icon(
+              Icons.whatsapp,
+            size: 35.sp,
+          ),
+          backgroundColor: Colors.green,
+          elevation: 0,
+        ),
         body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
@@ -86,40 +98,169 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: size.height*0.03,),
               Container(
+                width: size.width/1.3,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.yellow,
+                  borderRadius: BorderRadius.circular(7),
+                  color:const Color(0xffE8A4BB),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(0),
                   child: TabBar(
                     indicator: BoxDecoration(
-                      color: Colors.red,
+                      color: kPrimaryColor,
                       borderRadius: BorderRadius.circular(12),
 
                     ),
                     tabs:[
-                        Tab(
-                          text: 'Login',
+                         Tab(
+                           child: Text(
+                             'LOGIN',
+                             style: TextStyle(
+                               fontFamily: 'Poppins',
+                               fontSize: 15.sp,
+                               fontWeight: FontWeight.w400,
+                             ),
+                           ),
                         ),
                         Tab(
-                          text: 'SIGN UP',
+                          child: Text(
+                            'SIGN UP',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 15.sp,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
                         ),
                       ]
                   ),
                 ),
               ),
+              SizedBox(
+                height: size.height*0.02,
+              ),
               Container(
-                height: 200,
+                height: size.height/2,
                 child: TabBarView(
                   children: [
-                    Container(child: Text('login'),),
+                    Padding(
+                      padding:EdgeInsets.symmetric(horizontal:size.width*0.05 ),
+                      child: Container(
+                          child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                'Mobile Number/Email',
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 19.sp,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: size.height*0.01,
+                          ),
+                          defaultFormField(
+                              context,
+                              controller: emailController,
+                              type: TextInputType.emailAddress,
+                              validate:(value){
+                                if (value!.isEmpty) {
+                                  return 'Pleas enter your email address';
+                                }
+                                return null;
+                              },
+                              label: 'Mobile Number/Email',
+
+                          ),
+                          SizedBox(
+                            height: size.height*0.02,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                'Password',
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 19.sp,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: size.height*0.01,
+                          ),
+                          defaultFormField(
+                            context,
+                            controller: passwordController,
+                            type: TextInputType.emailAddress,
+                            validate:(value){
+                              if (value!.isEmpty) {
+                                return 'Pleas enter your email address';
+                              }
+                              return null;
+                            },
+                            label: 'Mobile Number/Email',
+                          ),
+                          SizedBox(
+                            height: size.height*0.03,
+                          ),
+                          defaultButton(
+                              context,
+                              function: (){},
+                              text: 'Login',
+                              rounder: BorderRadius.circular(10),
+                            width: size.width*0.5,
+                          ),
+                          SizedBox(
+                            height: size.height*0.03,
+                          ),
+                          Text(
+                              'Forget Password?',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 17.sp,
+                              fontWeight: FontWeight.w400,
+                              color:const Color(0xffC80808),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Create new account ',
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 17.sp,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              Text(
+                                'Signup',
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 17.sp,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color(0xff041E9E),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      ),
+                    ),
                     Container(child: Text('signup'),),
                   ],
                 ),
-              )
-
+              ),
             ],
           ),
         ),
