@@ -91,3 +91,12 @@ Widget defaultButton(
       ),
     );
 //End Default Button
+Widget floatButton()=> FloatingActionButton(
+onPressed: () {},
+child: Icon(
+Icons.whatsapp,
+size: 35.sp,
+),
+backgroundColor: Colors.green,
+elevation: 0,
+);

@@ -1,3 +1,4 @@
+import 'package:ad_samy/modules/gift%20information_screen/gift_information_screen.dart';
 import 'package:ad_samy/modules/login_screen/login_screen.dart';
 import 'package:ad_samy/modules/splash_screen/splash_screen.dart';
 import 'package:ad_samy/modules/verification_screen/verification_screen.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
         ),
-        home: const VerificationScreen(),
+        home: const GiftInformationScreen(),
       )
     );
   }
