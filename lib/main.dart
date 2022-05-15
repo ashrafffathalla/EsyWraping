@@ -1,5 +1,6 @@
 import 'package:ad_samy/modules/login_screen/login_screen.dart';
 import 'package:ad_samy/modules/splash_screen/splash_screen.dart';
+import 'package:ad_samy/modules/verification_screen/verification_screen.dart';
 import 'package:ad_samy/shared/components/background.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
         ),
-        home: const LoginScreen(),
+        home: const VerificationScreen(),
       )
     );
   }

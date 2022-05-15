@@ -1,3 +1,5 @@
+import 'package:ad_samy/modules/sign_up/sign_up.dart';
+import 'package:ad_samy/modules/splash_screen/splash_screen.dart';
 import 'package:ad_samy/shared/components/component.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -42,14 +44,10 @@ class LoginScreen extends StatelessWidget {
                               Positioned(
                                 child: SvgPicture.asset('assets/icons/elips.svg'),
                               ),
-                              Padding(
-                                padding:  EdgeInsets.symmetric(
-                                  horizontal: size.width*0.07,
-                                  vertical: size.width*0.07,
-                                ),
-                                child: Positioned(
-                                  child: SvgPicture.asset('assets/icons/choices.svg'),
-                                ),
+                              Positioned(
+                                top: 30.sp,
+                                left: 30.sp,
+                                child: SvgPicture.asset('assets/icons/choices.svg'),
                               ),
                             ],
                           ),
@@ -80,7 +78,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                          right: size.width*0.07,
+                          right: size.width*0.08,
                           top: size.height*0.01,
                         ),
                         child: Row(
@@ -99,42 +97,53 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: size.height*0.03,),
-              Container(
-                width: size.width/1.3,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(7),
-                  color:const Color(0xffE8A4BB),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(0),
-                  child: TabBar(
-                    indicator: BoxDecoration(
-                      color: kPrimaryColor,
-                      borderRadius: BorderRadius.circular(12),
+              GestureDetector(
+                onTap: (){
+                  navigateTo(context, SignupScreen());
 
-                    ),
-                    tabs:[
-                         Tab(
-                           child: Text(
-                             'LOGIN',
-                             style: TextStyle(
-                               fontFamily: 'Poppins',
-                               fontSize: 15.sp,
-                               fontWeight: FontWeight.w400,
+                },
+                child: Container(
+                  width: size.width/1.3,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(7),
+                    color:const Color(0xffE8A4BB),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(0),
+                    child: TabBar(
+                      indicator: BoxDecoration(
+                        color: kPrimaryColor,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      tabs:[
+                           Tab(
+                             child: Text(
+                               'LOGIN',
+                               style: TextStyle(
+                                 fontFamily: 'Poppins',
+                                 fontSize: 15.sp,
+                                 fontWeight: FontWeight.w400,
+                               ),
                              ),
-                           ),
-                        ),
-                        Tab(
-                          child: Text(
-                            'SIGN UP',
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 15.sp,
-                              fontWeight: FontWeight.w400,
+                          ),
+                          GestureDetector(
+                            onTap: (){
+                              navigateTo(context,const SignupScreen());
+                            },
+                            child: Tab(
+                              child: Text(
+                                'SIGN UP',
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                      ]
+                        ],
+                    ),
+
                   ),
                 ),
               ),
@@ -257,7 +266,34 @@ class LoginScreen extends StatelessWidget {
                       ),
                       ),
                     ),
-                    Container(child: Text('signup'),),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Create new account ',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 17.sp,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black,
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: (){
+                            navigateTo(context,const SignupScreen());
+                          },
+                          child: Text(
+                            'Signup',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 17.sp,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xff041E9E),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
