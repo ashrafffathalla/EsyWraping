@@ -34,7 +34,7 @@ class VerificationScreen extends StatelessWidget {
               Row(
                 children: [
                   SizedBox(
-                    width: size.width * 0.04,
+                    width: size.width * 0.05,
                   ),
                   const Icon(
                     Icons.arrow_back,
