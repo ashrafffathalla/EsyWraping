@@ -1,3 +1,6 @@
+import 'package:ad_samy/modules/addons/addons_screen.dart';
+import 'package:ad_samy/modules/address_screen/address_screen.dart';
+import 'package:ad_samy/modules/cart_screen/cart_screen.dart';
 import 'package:ad_samy/modules/gift%20information_screen/gift_information_screen.dart';
 import 'package:ad_samy/modules/login_screen/login_screen.dart';
 import 'package:ad_samy/modules/splash_screen/splash_screen.dart';
@@ -25,21 +28,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(393.0, 760.0),
-      splitScreenMode: false,
-      builder:(context) =>MaterialApp(
-        builder: (context,widget){
-          return MediaQuery(
-            data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-            child: widget!,
-          );
-        },
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
-        ),
-        home: const GiftInformationScreen(),
-      )
-    );
+        designSize: const Size(393.0, 760.0),
+        splitScreenMode: false,
+        builder: (context) => MaterialApp(
+              builder: (context, widget) {
+                return MediaQuery(
+                  data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+                  child: widget!,
+                );
+              },
+              debugShowCheckedModeBanner: false,
+              theme: ThemeData(
+                scaffoldBackgroundColor: Colors.white,
+              ),
+              home: const AddressScreen(),
+            ));
   }
 }

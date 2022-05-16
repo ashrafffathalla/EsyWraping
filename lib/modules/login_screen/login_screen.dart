@@ -100,7 +100,6 @@ class LoginScreen extends StatelessWidget {
               GestureDetector(
                 onTap: (){
                   navigateTo(context, SignupScreen());
-
                 },
                 child: Container(
                   width: size.width/1.3,

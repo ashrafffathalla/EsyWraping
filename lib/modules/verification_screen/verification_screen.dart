@@ -10,9 +10,7 @@ class VerificationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery
-        .of(context)
-        .size;
+    Size size = MediaQuery.of(context).size;
     return Form(
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
@@ -78,10 +76,7 @@ class VerificationScreen extends StatelessWidget {
                         }
                       },
                       textAlign: TextAlign.center,
-                      style: Theme
-                          .of(context)
-                          .textTheme
-                          .headline6,
+                      style: Theme.of(context).textTheme.headline6,
                       keyboardType: TextInputType.number,
                       inputFormatters: [
                         LengthLimitingTextInputFormatter(1),
@@ -104,10 +99,7 @@ class VerificationScreen extends StatelessWidget {
                         }
                       },
                       textAlign: TextAlign.center,
-                      style: Theme
-                          .of(context)
-                          .textTheme
-                          .headline6,
+                      style: Theme.of(context).textTheme.headline6,
                       keyboardType: TextInputType.number,
                       inputFormatters: [
                         LengthLimitingTextInputFormatter(1),
@@ -130,10 +122,7 @@ class VerificationScreen extends StatelessWidget {
                         }
                       },
                       textAlign: TextAlign.center,
-                      style: Theme
-                          .of(context)
-                          .textTheme
-                          .headline6,
+                      style: Theme.of(context).textTheme.headline6,
                       keyboardType: TextInputType.number,
                       inputFormatters: [
                         LengthLimitingTextInputFormatter(1),
@@ -156,10 +145,7 @@ class VerificationScreen extends StatelessWidget {
                         }
                       },
                       textAlign: TextAlign.center,
-                      style: Theme
-                          .of(context)
-                          .textTheme
-                          .headline6,
+                      style: Theme.of(context).textTheme.headline6,
                       keyboardType: TextInputType.number,
                       inputFormatters: [
                         LengthLimitingTextInputFormatter(1),
@@ -182,10 +168,7 @@ class VerificationScreen extends StatelessWidget {
                         }
                       },
                       textAlign: TextAlign.center,
-                      style: Theme
-                          .of(context)
-                          .textTheme
-                          .headline6,
+                      style: Theme.of(context).textTheme.headline6,
                       keyboardType: TextInputType.number,
                       inputFormatters: [
                         LengthLimitingTextInputFormatter(1),
@@ -195,7 +178,9 @@ class VerificationScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: size.height * 0.05,),
+              SizedBox(
+                height: size.height * 0.05,
+              ),
               Container(
                 margin: const EdgeInsets.symmetric(vertical: 10.0),
                 width: size.width * 0.5,
@@ -211,13 +196,14 @@ class VerificationScreen extends StatelessWidget {
                           color: Colors.white,
                           fontSize: 17.sp,
                           fontWeight: FontWeight.w400,
-                          fontFamily: 'Poppins'
-                      ),
+                          fontFamily: 'Poppins'),
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: size.height * 0.02,),
+              SizedBox(
+                height: size.height * 0.02,
+              ),
               Container(
                 margin: const EdgeInsets.symmetric(vertical: 10.0),
                 width: size.width * 0.5,
@@ -233,13 +219,11 @@ class VerificationScreen extends StatelessWidget {
                           color: Colors.white,
                           fontSize: 17.sp,
                           fontWeight: FontWeight.w400,
-                          fontFamily: 'Poppins'
-                      ),
+                          fontFamily: 'Poppins'),
                     ),
                   ),
                 ),
               ),
-
             ],
           ),
         ),
