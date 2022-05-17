@@ -102,7 +102,7 @@ Widget floatButton() => FloatingActionButton(
     );
 //End Floating Action Button
 Widget SizeBoxStart(context) => SizedBox(
-      height: MediaQuery.of(context).size.height * 0.09,
+      height: MediaQuery.of(context).size.height * 0.1,
     );
 // Start CircleAvatar colorsPalette
 Widget colorsPalette({

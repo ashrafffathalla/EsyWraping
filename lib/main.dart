@@ -3,6 +3,8 @@ import 'package:ad_samy/modules/address_screen/address_screen.dart';
 import 'package:ad_samy/modules/cart_screen/cart_screen.dart';
 import 'package:ad_samy/modules/gift%20information_screen/gift_information_screen.dart';
 import 'package:ad_samy/modules/login_screen/login_screen.dart';
+import 'package:ad_samy/modules/reset_password_screen/reset_password_screen.dart';
+import 'package:ad_samy/modules/special_event_invoice/special_eventI_invoice_screen.dart';
 import 'package:ad_samy/modules/special_event_screen/special_event_screen.dart';
 import 'package:ad_samy/modules/splash_screen/splash_screen.dart';
 import 'package:ad_samy/modules/verification_screen/verification_screen.dart';
@@ -44,7 +46,7 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(
                 scaffoldBackgroundColor: Colors.white,
               ),
-              home: const SpecialEventScreen(),
+              home: const ResetPasswordScreen(),
             ));
   }
 }

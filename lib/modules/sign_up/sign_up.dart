@@ -21,7 +21,7 @@ class SignupScreen extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
-              SizedBox(height: size.height*0.15,),
+              SizeBoxStart(context),
               Text(
                   'SIGN UP',
                 style: TextStyle(
