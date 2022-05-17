@@ -3,12 +3,15 @@ import 'package:ad_samy/modules/address_screen/address_screen.dart';
 import 'package:ad_samy/modules/cart_screen/cart_screen.dart';
 import 'package:ad_samy/modules/gift%20information_screen/gift_information_screen.dart';
 import 'package:ad_samy/modules/login_screen/login_screen.dart';
+import 'package:ad_samy/modules/special_event_screen/special_event_screen.dart';
 import 'package:ad_samy/modules/splash_screen/splash_screen.dart';
 import 'package:ad_samy/modules/verification_screen/verification_screen.dart';
 import 'package:ad_samy/shared/components/background.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'modules/checkout_screen/checkout_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,7 +44,7 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(
                 scaffoldBackgroundColor: Colors.white,
               ),
-              home: const AddressScreen(),
+              home: const SpecialEventScreen(),
             ));
   }
 }
