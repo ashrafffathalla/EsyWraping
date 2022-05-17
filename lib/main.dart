@@ -4,11 +4,13 @@ import 'package:ad_samy/modules/cart_screen/cart_screen.dart';
 import 'package:ad_samy/modules/gift%20information_screen/gift_information_screen.dart';
 import 'package:ad_samy/modules/login_screen/login_screen.dart';
 import 'package:ad_samy/modules/reset_password_screen/reset_password_screen.dart';
+import 'package:ad_samy/modules/sendto_other_screen/send_toother_screen.dart';
 import 'package:ad_samy/modules/special_event_invoice/special_eventI_invoice_screen.dart';
 import 'package:ad_samy/modules/special_event_screen/special_event_screen.dart';
 import 'package:ad_samy/modules/splash_screen/splash_screen.dart';
 import 'package:ad_samy/modules/verification_screen/verification_screen.dart';
 import 'package:ad_samy/shared/components/background.dart';
+import 'package:ad_samy/test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -46,7 +48,7 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(
                 scaffoldBackgroundColor: Colors.white,
               ),
-              home: const ResetPasswordScreen(),
+              home:const SendToOtherScreen(),
             ));
   }
 }
