@@ -38,6 +38,7 @@ class LoginScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Stack(
                             children: [
@@ -45,8 +46,8 @@ class LoginScreen extends StatelessWidget {
                                 child: SvgPicture.asset('assets/icons/elips.svg'),
                               ),
                               Positioned(
-                                top: 30.sp,
-                                left: 30.sp,
+                                top: 35.sp,
+                                left: 35.sp,
                                 child: SvgPicture.asset('assets/icons/choices.svg'),
                               ),
                             ],

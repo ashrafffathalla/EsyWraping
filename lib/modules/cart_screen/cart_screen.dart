@@ -55,7 +55,6 @@ class _CartScreenState extends State<CartScreen> {
             ),
               SizedBox(height: size.height*0.03,),
               Container(
-                width: size.width-0.091,
                height: size.height/1.5,
                decoration:BoxDecoration(
                  borderRadius: BorderRadius.circular(16),
@@ -95,7 +94,7 @@ class _CartScreenState extends State<CartScreen> {
                                   'assets/images/baby.png',
                                   fit: BoxFit.cover,
                                 ),
-                                SizedBox(width: size.width*0.02,),
+                                SizedBox(width: size.width*0.01,),
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -141,7 +140,7 @@ class _CartScreenState extends State<CartScreen> {
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                        SizedBox(width: size.width*0.07,),
+                                        SizedBox(width: size.width*0.05,),
                                         Row(
                                           children: [
                                             GestureDetector(
@@ -156,7 +155,7 @@ class _CartScreenState extends State<CartScreen> {
                                               " $count ",
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
-                                                fontSize: 16.sp,
+                                                fontSize: 15.sp,
                                               ),
                                             ),
                                             GestureDetector(
@@ -215,7 +214,7 @@ class _CartScreenState extends State<CartScreen> {
                                   ),
                                   child: Center(
                                     child: Text(
-                                      'EDIT',
+                                      'DELETE',
                                       style: TextStyle(
                                         fontFamily: 'Poppins',
                                         fontSize: 10.sp,
@@ -236,7 +235,7 @@ class _CartScreenState extends State<CartScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'BABY GIFT',
+                              'Mens GIFT',
                               style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 20.sp,
@@ -253,14 +252,14 @@ class _CartScreenState extends State<CartScreen> {
                                   'assets/images/mens.png',
                                   fit: BoxFit.cover,
                                 ),
-                                SizedBox(width: size.width*0.02,),
+                                SizedBox(width: size.width*0.01,),
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     SizedBox(height: size.height*0.02,),
                                     Text(
-                                      'Baby Gift',
+                                      'Mens Gift',
                                       style: TextStyle(
                                         fontFamily: 'Poppins',
                                         fontSize: 15.sp,
@@ -289,6 +288,7 @@ class _CartScreenState extends State<CartScreen> {
                                       ),
                                     ),
                                     Row(
+
                                       children: [
                                         Text(
                                           'Free Shopping',
@@ -299,7 +299,7 @@ class _CartScreenState extends State<CartScreen> {
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                        SizedBox(width: size.width*0.07,),
+                                        SizedBox(width: size.width*0.05,),
                                         Row(
                                           children: [
                                             GestureDetector(
