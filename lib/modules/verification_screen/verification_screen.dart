@@ -1,3 +1,6 @@
+import 'package:ad_samy/modules/address_screen/address_screen.dart';
+import 'package:ad_samy/modules/gift%20information_screen/gift_information_screen.dart';
+import 'package:ad_samy/modules/sendto_other_screen/send_toother_screen.dart';
 import 'package:ad_samy/shared/components/component.dart';
 import 'package:ad_samy/shared/style/colors.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +13,9 @@ class VerificationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery
+        .of(context)
+        .size;
     return Form(
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
@@ -76,7 +81,10 @@ class VerificationScreen extends StatelessWidget {
                         }
                       },
                       textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme
+                          .of(context)
+                          .textTheme
+                          .headline6,
                       keyboardType: TextInputType.number,
                       inputFormatters: [
                         LengthLimitingTextInputFormatter(1),
@@ -99,7 +107,10 @@ class VerificationScreen extends StatelessWidget {
                         }
                       },
                       textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme
+                          .of(context)
+                          .textTheme
+                          .headline6,
                       keyboardType: TextInputType.number,
                       inputFormatters: [
                         LengthLimitingTextInputFormatter(1),
@@ -122,7 +133,10 @@ class VerificationScreen extends StatelessWidget {
                         }
                       },
                       textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme
+                          .of(context)
+                          .textTheme
+                          .headline6,
                       keyboardType: TextInputType.number,
                       inputFormatters: [
                         LengthLimitingTextInputFormatter(1),
@@ -145,7 +159,10 @@ class VerificationScreen extends StatelessWidget {
                         }
                       },
                       textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme
+                          .of(context)
+                          .textTheme
+                          .headline6,
                       keyboardType: TextInputType.number,
                       inputFormatters: [
                         LengthLimitingTextInputFormatter(1),
@@ -168,7 +185,10 @@ class VerificationScreen extends StatelessWidget {
                         }
                       },
                       textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme
+                          .of(context)
+                          .textTheme
+                          .headline6,
                       keyboardType: TextInputType.number,
                       inputFormatters: [
                         LengthLimitingTextInputFormatter(1),
@@ -201,9 +221,6 @@ class VerificationScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                height: size.height * 0.02,
-              ),
               Container(
                 margin: const EdgeInsets.symmetric(vertical: 10.0),
                 width: size.width * 0.5,
@@ -211,7 +228,9 @@ class VerificationScreen extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      navigateTo(context, AddressScreen());
+                    },
                     color: kPrimaryColor,
                     child: Text(
                       'Submit',

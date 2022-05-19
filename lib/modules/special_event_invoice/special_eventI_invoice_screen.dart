@@ -189,7 +189,6 @@ class SpecialEventInvoiceScreen extends StatelessWidget {
                           SvgPicture.asset('assets/icons/arrow-white.svg')
                         ],
                       ),
-
                     ],
                   ),
                 ),

@@ -15,186 +15,209 @@ class SignupScreen extends StatelessWidget {
     var confirmPasswordController = TextEditingController();
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Padding(
-        padding:EdgeInsets.symmetric(horizontal:size.width*0.05 ),
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Column(
-            children: [
-              SizeBoxStart(context),
-              Text(
-                  'SIGN UP',
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontSize: 35.sp,
-                  fontWeight: FontWeight.w400,
-                  color: kPrimaryColor,
+      body: SizedBox(
+        width: double.infinity,
+        height:double.infinity,
+        child: Stack(
+          children: [
+            Positioned(
+              top: 0,
+              right: 0,
+              child: Image.asset(
+                'assets/images/top_left.png',
+              ),
+            ),
+            Positioned(
+              bottom: 0,
+              left: 0,
+              child: Image.asset(
+                'assets/images/bottom_leftt.png',
+              ),
+            ),
+            Positioned(child: Padding(
+              padding:EdgeInsets.symmetric(horizontal:size.width*0.05 ),
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Column(
+                  children: [
+                    SizeBoxStart(context),
+                    Text(
+                      'SIGN UP',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 35.sp,
+                        fontWeight: FontWeight.w400,
+                        color: kPrimaryColor,
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          'Full Name',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: size.height*0.01,
+                    ),
+                    defaultFormField(
+                      context,
+                      controller: nameController,
+                      type: TextInputType.name,
+                      validate:(value){
+                        if (value!.isEmpty) {
+                          return 'Pleas enter your email address';
+                        }
+                        return null;
+                      },
+                      label: 'Full Name',
+
+                    ),
+                    SizedBox(
+                      height: size.height*0.02,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          'Email',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: size.height*0.01,
+                    ),
+                    defaultFormField(
+                      context,
+                      controller: emailController,
+                      type: TextInputType.emailAddress,
+                      validate:(value){
+                        if (value!.isEmpty) {
+                          return 'Pleas enter your email';
+                        }
+                        return null;
+                      },
+                      label: 'Email',
+
+                    ),
+                    SizedBox(
+                      height: size.height*0.02,
+                    ),
+
+                    Row(
+                      children: [
+                        Text(
+                          'Phone',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: size.height*0.01,
+                    ),
+                    defaultFormField(
+                      context,
+                      controller: phoneController,
+                      type: TextInputType.phone,
+                      validate:(value){
+                        if (value!.isEmpty) {
+                          return 'Pleas enter your phone number';
+                        }
+                        return null;
+                      },
+                      label: 'Phone',
+
+                    ),
+                    SizedBox(
+                      height: size.height*0.02,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          'Password',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: size.height*0.01,
+                    ),
+                    defaultFormField(
+                      context,
+                      controller: passwordController,
+                      type: TextInputType.visiblePassword,
+                      validate:(value){
+                        if (value!.isEmpty) {
+                          return 'Pleas enter your Password';
+                        }
+                        return null;
+                      },
+                      label: 'Password',
+                    ),
+
+                    SizedBox(
+                      height: size.height*0.02,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          'Confirm Password',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: size.height*0.01,
+                    ),
+                    defaultFormField(
+                      context,
+                      controller: confirmPasswordController,
+                      type: TextInputType.visiblePassword,
+                      validate:(value){
+                        if (value!.isEmpty) {
+                          return 'Pleas enter your confirm Password';
+                        }
+                        return null;
+                      },
+                      label: 'Password',
+                    ),
+                    SizedBox(
+                      height: size.height*0.04,
+                    ),
+                    defaultButton(
+                      context,
+                      function: (){},
+                      text: 'Sign Up',
+                      rounder: BorderRadius.circular(10),
+                      width: size.width*0.5,
+                    ),
+                  ],
                 ),
               ),
-              Row(
-                children: [
-                  Text(
-                    'Full Name',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: size.height*0.01,
-              ),
-              defaultFormField(
-                context,
-                controller: nameController,
-                type: TextInputType.name,
-                validate:(value){
-                  if (value!.isEmpty) {
-                    return 'Pleas enter your email address';
-                  }
-                  return null;
-                },
-                label: 'Full Name',
+            ),),
 
-              ),
-              SizedBox(
-                height: size.height*0.02,
-              ),
-              Row(
-                children: [
-                  Text(
-                    'Email',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: size.height*0.01,
-              ),
-              defaultFormField(
-                context,
-                controller: emailController,
-                type: TextInputType.emailAddress,
-                validate:(value){
-                  if (value!.isEmpty) {
-                    return 'Pleas enter your email';
-                  }
-                  return null;
-                },
-                label: 'Email',
-
-              ),
-              SizedBox(
-                height: size.height*0.02,
-              ),
-
-              Row(
-                children: [
-                  Text(
-                    'Phone',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: size.height*0.01,
-              ),
-              defaultFormField(
-                context,
-                controller: phoneController,
-                type: TextInputType.phone,
-                validate:(value){
-                  if (value!.isEmpty) {
-                    return 'Pleas enter your phone number';
-                  }
-                  return null;
-                },
-                label: 'Phone',
-
-              ),
-              SizedBox(
-                height: size.height*0.02,
-              ),
-              Row(
-                children: [
-                  Text(
-                    'Password',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: size.height*0.01,
-              ),
-              defaultFormField(
-                context,
-                controller: passwordController,
-                type: TextInputType.visiblePassword,
-                validate:(value){
-                  if (value!.isEmpty) {
-                    return 'Pleas enter your Password';
-                  }
-                  return null;
-                },
-                label: 'Password',
-              ),
-
-              SizedBox(
-                height: size.height*0.02,
-              ),
-              Row(
-                children: [
-                  Text(
-                    'Confirm Password',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: size.height*0.01,
-              ),
-              defaultFormField(
-                context,
-                controller: confirmPasswordController,
-                type: TextInputType.visiblePassword,
-                validate:(value){
-                  if (value!.isEmpty) {
-                    return 'Pleas enter your confirm Password';
-                  }
-                  return null;
-                },
-                label: 'Password',
-              ),
-              SizedBox(
-                height: size.height*0.04,
-              ),
-              defaultButton(
-                context,
-                function: (){},
-                text: 'Sign Up',
-                rounder: BorderRadius.circular(10),
-                width: size.width*0.5,
-              ),
-            ],
-          ),
+          ],
         ),
       ),
     );

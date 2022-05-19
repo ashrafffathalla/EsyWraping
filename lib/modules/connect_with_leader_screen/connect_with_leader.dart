@@ -24,6 +24,7 @@ class ConnectWithLeaderScreen extends StatelessWidget {
                     Icons.arrow_back,
                     size: 25,
                   ),
+                  SizedBox(width: size.width*0.02,),
                   Text(
                     'Connect With a Leader',
                     style: TextStyle(

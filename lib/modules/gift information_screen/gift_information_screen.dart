@@ -263,35 +263,40 @@ class _GiftInformationScreenState extends State<GiftInformationScreen> {
               ),
               Column(
                 children: [
-                  Container(
-                    width: size.width*0.92,
-                    height: size.height*0.09,
-                    decoration: BoxDecoration(
-                      color:const Color(0xffF5F5F5),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: size.width*0.03),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                         Row(
-                           children: [
-                             Text(
-                               'Gift For Myself',
-                               style: TextStyle(
-                                 color: Colors.black,
-                                 fontWeight: FontWeight.w400,
-                                 fontSize: 20.sp,
-                                 fontFamily: 'Poppins',
+                  InkWell(
+                    onTap: (){
+                      ///TODO
+                    },
+                    child: Container(
+                      width: size.width*0.92,
+                      height: size.height*0.09,
+                      decoration: BoxDecoration(
+                        color:const Color(0xffF5F5F5),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: size.width*0.03),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                           Row(
+                             children: [
+                               Text(
+                                 'Gift For Myself',
+                                 style: TextStyle(
+                                   color: Colors.black,
+                                   fontWeight: FontWeight.w400,
+                                   fontSize: 20.sp,
+                                   fontFamily: 'Poppins',
+                                 ),
                                ),
-                             ),
-                             const Spacer(),
-                             SvgPicture.asset('assets/icons/right.svg'),
-                           ],
-                         ),
+                               const Spacer(),
+                               SvgPicture.asset('assets/icons/right.svg'),
+                             ],
+                           ),
 
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),

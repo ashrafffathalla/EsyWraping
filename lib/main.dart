@@ -34,7 +34,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -46,12 +45,12 @@ class MyApp extends StatelessWidget {
                   data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
                   child: widget!,
                 );
-              },
+                },
               debugShowCheckedModeBanner: false,
               theme: ThemeData(
                 scaffoldBackgroundColor: Colors.white,
               ),
-              home:const ConnectWithLeaderScreen(),
-            ));
+              home: const SplashScreen(),
+            ),);
   }
 }

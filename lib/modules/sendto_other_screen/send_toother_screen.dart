@@ -26,7 +26,7 @@ class SendToOtherScreen extends StatelessWidget {
               bottom: 0,
               left: 0,
               child: Image.asset(
-                'assets/images/bottom.png',
+                'assets/images/bottom_leftt.png',
               ),
             ),
             Positioned(

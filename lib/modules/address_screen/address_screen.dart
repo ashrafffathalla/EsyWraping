@@ -27,10 +27,15 @@ class AddressScreen extends StatelessWidget {
               children: [
                 SizeBoxStart(context),
                 Row(
-                  children: [
-                    const Icon(
-                        Icons.arrow_back,
-                      size: 25,
+                  children:[
+                     InkWell(
+                      onTap: (){
+                        Navigator.pop(context);
+                      },
+                      child:const Icon(
+                          Icons.arrow_back,
+                        size: 25,
+                      ),
                     ),
                     SizedBox(width: size.width*0.05,),
                     Text(
