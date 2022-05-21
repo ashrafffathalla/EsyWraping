@@ -1,3 +1,4 @@
+import 'package:ad_samy/modules/description_screen/description_screen.dart';
 import 'package:ad_samy/modules/sendto_other_screen/send_toother_screen.dart';
 import 'package:ad_samy/shared/components/component.dart';
 import 'package:ad_samy/shared/components/custom_checbox.dart';
@@ -36,30 +37,21 @@ class _GiftInformationScreenState extends State<GiftInformationScreen> {
                   SizedBox(
                     width: size.width * 0.05,
                   ),
-                  Icon(
-                    Icons.arrow_back,
-                    size: 25.sp,
+                  InkWell(
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
+                    child: Icon(
+                      Icons.arrow_back,
+                      size: 25.sp,
+                    ),
                   ),
                 ],
               ),
               SizedBox(
                 height: size.width * 0.025,
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.27,
-                child: ListView.separated(
-                  physics: const BouncingScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => CardBuilder(context),
-                  separatorBuilder: (context, index) => SizedBox(
-                    width: size.width * 0.01,
-                  ),
-                  itemCount: 4,
-                ),
-              ),
-              SizedBox(
-                height: size.width * 0.025,
-              ),
+
               Row(
                 children: [
                   Text(
@@ -206,141 +198,68 @@ class _GiftInformationScreenState extends State<GiftInformationScreen> {
                       //SizedBox(width: size.width*0.02,),
                     ],
                   ),
-                ],
-              ),
-              SizedBox(
-                height: size.width * 0.025,
-              ),
-              Row(
-                children: [
-                  Text(
-                      'Size',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 15.sp,
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
-                ],
-              ),
-               Row(
-                 children: [
-                   const CustomCheckBox(
-                    isChecked: false,
-                    text: 'S',
-              ),
-                    SizedBox(width: size.width*0.02,),
-                   const CustomCheckBox(
-                    isChecked: false,
-                    text: 'M',
-              ),
-                   SizedBox(width: size.width*0.02,),
-                   const CustomCheckBox(
-                    isChecked: false,
-                    text: 'L',
-              ),
-                 ],
-               ),
-              SizedBox(
-                height: size.width * 0.025,
-              ),
-               Row(
-                 children: [
-                   colorsPalette(backgroundColor: kPrimaryColor),
-                   SizedBox(width: size.width*0.03,),
-                   colorsPalette(backgroundColor: Colors.black),
-                   SizedBox(width: size.width*0.03,),
-                   colorsPalette(backgroundColor: Colors.red),
-                   SizedBox(width: size.width*0.03,),
-                   colorsPalette(backgroundColor: Colors.blue),
-                   SizedBox(width: size.width*0.03,),
-                   colorsPalette(backgroundColor: Colors.green),
-                 ],
-               ),
-              SizedBox(
-                height: size.width * 0.025,
-              ),
-              Column(
-                children: [
-                  InkWell(
-                    onTap: (){
-                      ///TODO
-                    },
-                    child: Container(
-                      width: size.width*0.92,
-                      height: size.height*0.09,
-                      decoration: BoxDecoration(
-                        color:const Color(0xffF5F5F5),
-                        borderRadius: BorderRadius.circular(8),
+                  Row(
+                    children: [
+                      Radio(
+                        fillColor: MaterialStateColor.resolveWith(
+                                (states) => kPrimaryColor),
+                        value: 4,
+                        groupValue: indexValue,
+                        onChanged: (value) {
+                          setState(() {
+                            indexValue = value as int;
+                          });
+                        },
                       ),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: size.width*0.03),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                           Row(
-                             children: [
-                               Text(
-                                 'Gift For Myself',
-                                 style: TextStyle(
-                                   color: Colors.black,
-                                   fontWeight: FontWeight.w400,
-                                   fontSize: 20.sp,
-                                   fontFamily: 'Poppins',
-                                 ),
-                               ),
-                               const Spacer(),
-                               SvgPicture.asset('assets/icons/right.svg'),
-                             ],
-                           ),
-
-                          ],
+                      Text(
+                        'All',
+                        style: TextStyle(
+                            fontSize: 18.sp,
+                            color: kPrimaryColor,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Poppins'
                         ),
                       ),
-                    ),
-                  ),
-                  SizedBox(height: size.width * 0.025,),
-                  InkWell(
-                    onTap: (){
-                      navigateTo(context,const SendToOtherScreen());
-                    },
-                    child: Container(
-                      width: size.width*0.92,
-                      height: size.height*0.09,
-                      decoration: BoxDecoration(
-                        color:const Color(0xffF5F5F5),
-                        borderRadius: BorderRadius.circular(8),
+                      SizedBox(
+                        width: size.width*0.12,
                       ),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: size.width*0.03),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                           Row(
-                             children: [
-                               Text(
-                                 'Send To Others',
-                                 style: TextStyle(
-                                   color: Colors.black,
-                                   fontWeight: FontWeight.w400,
-                                   fontSize: 20.sp,
-                                   fontFamily: 'Poppins',
-                                 ),
-                               ),
-                               const Spacer(),
-                               SvgPicture.asset('assets/icons/right.svg'),
-                             ],
-                           ),
-
-                          ],
-                        ),
+                      Container(
+                        width:size.width*0.568,
+                        height: size.height*0.034,
+                        color: Colors.grey[300],
                       ),
-                    ),
+                      //SizedBox(width: size.width*0.02,),
+                    ],
                   ),
-                  SizedBox(height: size.width * 0.2,),
                 ],
-              )
+              ),
+              SizedBox(
+                height: size.width * 0.025,
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.27,
+                child: ListView.separated(
+                  physics: const BouncingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => cardBuilder(context),
+                  separatorBuilder: (context, index) => SizedBox(
+                    width: size.width * 0.01,
+                  ),
+                  itemCount: 4,
+                ),
+              ),
+              SizedBox(
+                height: size.width * 0.07,
+              ),
+              defaultButton(
+                context,
+                function: () {
+                  navigateTo(context,const DescriptionScreen());
+                },
+                text: 'next',
+                rounder: BorderRadius.circular(10),
+                width: size.width * 0.5,
+              ),
             ],
           ),
         ),
@@ -348,8 +267,8 @@ class _GiftInformationScreenState extends State<GiftInformationScreen> {
     );
   }
 
-  Widget CardBuilder(context) => Center(
-        child: Container(
+  Widget cardBuilder(context) => Center(
+        child: SizedBox(
           width: MediaQuery.of(context).size.width * 0.9,
           height: MediaQuery.of(context).size.height * 0.27,
           child: Image.asset(

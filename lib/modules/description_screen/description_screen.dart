@@ -32,82 +32,35 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
             children: [
               SizeBoxStart(context),
               Row(
-                children:const[
-                  Icon(
-                      Icons.arrow_back,
-                    size: 25,
+                children:[
+                  InkWell(
+                    onTap:() {
+                      Navigator.pop(context);
+                    },
+                    child:const Icon(
+                        Icons.arrow_back,
+                      size: 25,
+                    ),
                   ),
                 ],
               ),
-              SizedBox(height: size.height*0.05,),
-              Container(
-                width: double.infinity,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children:[
-                    Radio(
-                      activeColor: kPrimaryColor,
-                        value: 1,
-                        groupValue: isSelected,
-                        onChanged:(val){
-                        setState(() {
-                          isSelected=val! as int;
-                        });
-                        },
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SizedBox(height: size.height*0.1,),
+                  Text(
+                    'Size',
+                    style: TextStyle(
+                      fontSize:20.sp,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'Poppins',
                     ),
-                    Text(
-                        'Men',
-                      style: TextStyle(
-                        fontFamily: 'Poppins',
-                        color: kPrimaryColor,
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    Radio(
-                      activeColor: kPrimaryColor,
-                      value: 2,
-                      groupValue: isSelected,
-                      onChanged:(val){
-                        setState(() {
-                          isSelected=val! as int;
-                        });
-                      },
-                    ),
-                    Text(
-                      'Women',
-                      style: TextStyle(
-                        fontFamily: 'Poppins',
-                        color: kPrimaryColor,
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    Radio(
-                      activeColor: kPrimaryColor,
-                      value: 3,
-                      groupValue: isSelected,
-                      onChanged:(val){
-                        setState(() {
-                          isSelected=val! as int;
-                        });
-                      },
-                    ),
-                    Text(
-                      'Kids',
-                      style: TextStyle(
-                        fontFamily: 'Poppins',
-                        color: kPrimaryColor,
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              SizedBox(height: size.height*0.05,),
               Row(
                 children:[
+
                   const CustomCheckBox(
                       isChecked: false,
                       text: 'S',

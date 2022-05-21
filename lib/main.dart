@@ -6,6 +6,7 @@ import 'package:ad_samy/modules/description_screen/description_screen.dart';
 import 'package:ad_samy/modules/gift%20information_screen/gift_information_screen.dart';
 import 'package:ad_samy/modules/login_screen/login_screen.dart';
 import 'package:ad_samy/modules/menu_screen/menu_screen.dart';
+import 'package:ad_samy/modules/profile_screen/profile_screen.dart';
 import 'package:ad_samy/modules/reset_password_screen/reset_password_screen.dart';
 import 'package:ad_samy/modules/sendto_other_screen/send_toother_screen.dart';
 import 'package:ad_samy/modules/special_event_invoice/special_eventI_invoice_screen.dart';
@@ -19,6 +20,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'modules/checkout_screen/checkout_screen.dart';
+import 'modules/send_to_myself_screen/send_to_myself_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,7 +52,7 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(
                 scaffoldBackgroundColor: Colors.white,
               ),
-              home: const SplashScreen(),
+              home: const ProfileScreen(),
             ),);
   }
 }

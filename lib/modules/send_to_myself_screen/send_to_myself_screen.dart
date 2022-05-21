@@ -1,33 +1,25 @@
-import 'package:ad_samy/shared/style/colors.dart';
+import 'package:ad_samy/shared/components/component.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../shared/components/component.dart';
-import '../verification_screen/verification_screen.dart';
-class SignupScreen extends StatelessWidget {
-  const SignupScreen({Key? key}) : super(key: key);
+import 'package:flutter_svg/flutter_svg.dart';
+class SendToMyselfScreen extends StatelessWidget {
+  const SendToMyselfScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var nameController = TextEditingController();
-    var emailController = TextEditingController();
-    var phoneController = TextEditingController();
-    var passwordController = TextEditingController();
-    var confirmPasswordController = TextEditingController();
+    var fullName = TextEditingController();
+    var currentLocationController = TextEditingController();
+    var areaController = TextEditingController();
+    var receiveDate = TextEditingController();
+    var noteController = TextEditingController();
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SizedBox(
         width: double.infinity,
-        height:double.infinity,
+        height: double.infinity,
         child: Stack(
           children: [
-            Positioned(
-              top: 0,
-              right: 0,
-              child: Image.asset(
-                'assets/images/top_left.png',
-              ),
-            ),
             Positioned(
               bottom: 0,
               left: 0,
@@ -35,21 +27,30 @@ class SignupScreen extends StatelessWidget {
                 'assets/images/bottom_leftt.png',
               ),
             ),
-            Positioned(child: Padding(
-              padding:EdgeInsets.symmetric(horizontal:size.width*0.05 ),
+            Positioned(
               child: SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
+              physics:const BouncingScrollPhysics(),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: size.width*0.05),
                 child: Column(
                   children: [
                     SizeBoxStart(context),
-                    Text(
-                      'SIGN UP',
-                      style: TextStyle(
-                        fontFamily: 'Poppins',
-                        fontSize: 35.sp,
-                        fontWeight: FontWeight.w400,
-                        color: kPrimaryColor,
-                      ),
+                    SizedBox(height: size.height*0.03,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                            'Send To Myself',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 25.sp,
+                            fontFamily: 'Poppins'
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: size.height*0.05,
                     ),
                     Row(
                       children: [
@@ -68,11 +69,11 @@ class SignupScreen extends StatelessWidget {
                     ),
                     defaultFormField(
                       context,
-                      controller: nameController,
+                      controller: fullName,
                       type: TextInputType.name,
                       validate:(value){
                         if (value!.isEmpty) {
-                          return 'Pleas enter your email address';
+                          return 'Pleas enter your Full Name';
                         }
                         return null;
                       },
@@ -85,62 +86,55 @@ class SignupScreen extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          'Email',
+                          'Current Location ',
                           style: TextStyle(
                             fontFamily: 'Poppins',
                             fontSize: 15.sp,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
-                      ],
+                        SvgPicture.asset('assets/icons/pin.svg'),
+                        ],
                     ),
                     SizedBox(
                       height: size.height*0.01,
                     ),
-                    defaultFormField(
-                      context,
-                      controller: emailController,
-                      type: TextInputType.emailAddress,
-                      validate:(value){
-                        if (value!.isEmpty) {
-                          return 'Pleas enter your email';
-                        }
-                        return null;
-                      },
-                      label: 'Email',
-
-                    ),
-                    SizedBox(
-                      height: size.height*0.02,
-                    ),
-
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Text(
-                          'Phone',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 15.sp,
-                            fontWeight: FontWeight.w400,
+                        SizedBox(
+                          width: size.width/2.5,
+                          child: defaultFormField(
+                            context,
+                            controller: currentLocationController,
+                            type: TextInputType.number,
+                            validate:(value){
+                              if (value!.isEmpty) {
+                                return 'Pleas enter your Current Location';
+                              }
+                              return null;
+                            },
+                            label: '4578',
+
+                          ),
+                        ),
+                        SizedBox(
+                          width: size.width/2.5,
+                          child: defaultFormField(
+                            context,
+                            controller: currentLocationController,
+                            type: TextInputType.number,
+                            validate:(value){
+                              if (value!.isEmpty) {
+                                return 'Pleas enter your Current Location';
+                              }
+                              return null;
+                            },
+                            label: '4578',
+
                           ),
                         ),
                       ],
-                    ),
-                    SizedBox(
-                      height: size.height*0.01,
-                    ),
-                    defaultFormField(
-                      context,
-                      controller: phoneController,
-                      type: TextInputType.phone,
-                      validate:(value){
-                        if (value!.isEmpty) {
-                          return 'Pleas enter your phone number';
-                        }
-                        return null;
-                      },
-                      label: 'Phone',
-
                     ),
                     SizedBox(
                       height: size.height*0.02,
@@ -148,7 +142,7 @@ class SignupScreen extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          'Password',
+                          'Area',
                           style: TextStyle(
                             fontFamily: 'Poppins',
                             fontSize: 15.sp,
@@ -162,24 +156,24 @@ class SignupScreen extends StatelessWidget {
                     ),
                     defaultFormField(
                       context,
-                      controller: passwordController,
-                      type: TextInputType.visiblePassword,
+                      controller: areaController,
+                      type: TextInputType.text,
                       validate:(value){
                         if (value!.isEmpty) {
-                          return 'Pleas enter your Password';
+                          return 'Pleas enter your Area';
                         }
                         return null;
                       },
-                      label: 'Password',
-                    ),
+                      label: 'Area',
 
+                    ),
                     SizedBox(
                       height: size.height*0.02,
                     ),
                     Row(
                       children: [
                         Text(
-                          'Confirm Password',
+                          'Receive Date',
                           style: TextStyle(
                             fontFamily: 'Poppins',
                             fontSize: 15.sp,
@@ -193,33 +187,69 @@ class SignupScreen extends StatelessWidget {
                     ),
                     defaultFormField(
                       context,
-                      controller: confirmPasswordController,
-                      type: TextInputType.visiblePassword,
+                      controller: receiveDate,
+                      type: TextInputType.text,
                       validate:(value){
                         if (value!.isEmpty) {
-                          return 'Pleas enter your confirm Password';
+                          return 'Pleas enter your Receive Date';
                         }
                         return null;
                       },
-                      label: 'Password',
+                      label: 'Receive Date',
+
                     ),
                     SizedBox(
-                      height: size.height*0.04,
+                      height: size.height*0.02,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          'Note',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: size.height*0.01,
+                    ),
+                    Container(
+                      child: TextFormField(
+                        controller: noteController,
+                        maxLines: 5,
+                        keyboardType: TextInputType.multiline,
+                        decoration:const InputDecoration(
+                          hintText: 'type something',
+                          border: OutlineInputBorder(
+                            borderRadius:
+                            BorderRadius.all(Radius.circular(6)),
+                          ),
+                        ),
+                      ),
+                      width: size.width * 0.9,
+                      height: size.height * 0.2,
+                    ),
+                    SizedBox(
+                      height: size.height*0.01,
                     ),
                     defaultButton(
                       context,
-                      function: (){
-                        navigateTo(context,const VerificationScreen());
-                      },
-                      text: 'Sign Up',
+                      function: (){},
+                      text: 'Submit',
                       rounder: BorderRadius.circular(10),
                       width: size.width*0.5,
+                    ),
+                    SizedBox(
+                      height: size.height*0.05,
                     ),
                   ],
                 ),
               ),
-            ),),
-
+            ),
+            ),
           ],
         ),
       ),

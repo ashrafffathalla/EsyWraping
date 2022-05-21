@@ -64,7 +64,7 @@ class SendToOtherScreen extends StatelessWidget {
                         defaultFormField(
                           context,
                           controller: fullName,
-                          type: TextInputType.name,
+                          type: TextInputType.text,
                           validate:(value){
                             if (value!.isEmpty) {
                               return 'Pleas enter your Full Name';
@@ -95,7 +95,7 @@ class SendToOtherScreen extends StatelessWidget {
                         defaultFormField(
                           context,
                           controller: currentLocationController,
-                          type: TextInputType.emailAddress,
+                          type: TextInputType.text,
                           validate:(value){
                             if (value!.isEmpty) {
                               return 'Pleas enter your Current Location';

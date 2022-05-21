@@ -15,6 +15,7 @@ class SplashScreen extends StatelessWidget {
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Image.asset(
                 'assets/images/splash.png',
@@ -23,6 +24,7 @@ class SplashScreen extends StatelessWidget {
               SizedBox(height: size.height*0.03,),
               GestureDetector(
                 onTap: (){
+
                   navigateTo(context,const StartScreen());
                 },
                 child: Container(
@@ -43,6 +45,10 @@ class SplashScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(7),
                   ),
                 ),
+
+              ),
+              SizedBox(
+                height: size.height*0.01,
               ),
             ],
           ),
