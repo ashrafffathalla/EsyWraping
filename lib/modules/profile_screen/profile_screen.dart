@@ -23,217 +23,231 @@ class ProfileScreen extends StatelessWidget {
                 'assets/images/bottom_leftt.png',
               ),
             ),
-            Positioned(child: SingleChildScrollView(
-              physics:const BouncingScrollPhysics(),
-              child: Padding(
-                padding:  EdgeInsets.symmetric(horizontal:size.width*0.08),
-                child: Column(
-                  children: [
-                    SizeBoxStart(context),
-                    Row(
-                      children: [
-                        SvgPicture.asset(
-                          'assets/icons/menu.svg',
-                          width: 20.sp,
-                        ),
-                        SizedBox(width: size.width*0.05,),
-                        Text(
-                          'Profile',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 25.sp,
-                            fontWeight: FontWeight.w400,
+            Positioned(
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.08),
+                  child: Column(
+                    children: [
+                      SizeBoxStart(context),
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            'assets/icons/menu.svg',
+                            width: 20.sp,
                           ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: size.height*0.05,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children:[
-                        CircleAvatar(
-                          backgroundImage:const ExactAssetImage('assets/images/profile_image.png'),
-                          radius: 40.sp,
-                        ),
-                        SizedBox(width: size.width*0.05,),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Mohamed Ahmed',
-                              style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontSize: 15.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
+                          SizedBox(
+                            width: size.width * 0.05,
+                          ),
+                          Text(
+                            'Profile',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 25.sp,
+                              fontWeight: FontWeight.w400,
                             ),
-                            Text(
-                              'mohamedahmed@gmail.com',
-                              style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w400,
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: size.height * 0.05,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CircleAvatar(
+                            backgroundImage: const ExactAssetImage(
+                                'assets/images/profile_image.png'),
+                            radius: 40.sp,
+                          ),
+                          SizedBox(
+                            width: size.width * 0.05,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Mohamed Ahmed',
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
+                              Text(
+                                'mohamedahmed@gmail.com',
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: size.height * 0.02,
+                      ),
+                      myDivider(context),
+                      SizedBox(
+                        height: size.height * 0.03,
+                      ),
+                      Row(
+                        children: [
+                          const Icon(Icons.phone_android_rounded),
+                          Text(
+                            'Mobile Number : ',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w400,
                             ),
-                          ],
-                        ),
-
-                      ],
-                    ),
-                    SizedBox(height: size.height*0.02,),
-                    myDivider(context),
-                    SizedBox(height: size.height*0.03,),
-                    Row(
-                      children: [
-                        const Icon(Icons.phone_android_rounded),
-                        Text(
-                          'Mobile Number : ',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w400,
                           ),
-
-                        ),
-                        Text(
-                          '01012405566',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w400,
+                          Text(
+                            '01012405566',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: size.height*0.02,),
-                    Row(
-                      children: [
-                        SvgPicture.asset(
-                          'assets/icons/old-man.svg',
-                          width: 20.sp,
-                        ),
-                        Text(
-                          'Age : ',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w400,
+                        ],
+                      ),
+                      SizedBox(
+                        height: size.height * 0.02,
+                      ),
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            'assets/icons/old-man.svg',
+                            width: 20.sp,
                           ),
-
-                        ),
-                        Text(
-                          '25',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w400,
+                          Text(
+                            'Age : ',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: size.height*0.02,),
-                    Row(
-                      children: [
-                        Icon(Icons.pin_drop),
-                        Text(
-                          'Address : ',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w400,
+                          Text(
+                            '25',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ),
-
-                        ),
-                        Text(
-                          '8 street city',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w400,
+                        ],
+                      ),
+                      SizedBox(
+                        height: size.height * 0.02,
+                      ),
+                      Row(
+                        children: [
+                          Icon(Icons.pin_drop),
+                          Text(
+                            'Address : ',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: size.height*0.02,),
-                    Row(
-                      children: [
-                        SvgPicture.asset(
-                          'assets/icons/id.svg',
-                          width: 20.sp,
-                          height: 7,
-
-                        ),
-                        Text(
-                          'id : ',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w400,
+                          Text(
+                            '8 street city',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ),
-
-                        ),
-                        Text(
-                          '296 458 625 412 65',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w400,
+                        ],
+                      ),
+                      SizedBox(
+                        height: size.height * 0.02,
+                      ),
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            'assets/icons/id-card.svg',
+                            width: 20.sp,
                           ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: size.height*0.02,),
-                    Row(
-                      children: [
-                        SvgPicture.asset(
-                          'assets/icons/report.svg',
-                          width: 20.sp,
-                        ),
-                        Text(
-                          ' Status : ',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w400,
+                          Text(
+                            ' id : ',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ),
-                        ),
-
-                      ],
-                    ),
-                    SizedBox(height: size.height*0.02,),
-                    Column(
-                      children: [
-                        Text("Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w400,
+                          Text(
+                            '296 458 625 412 65',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ),
-                        ),
-
-                      ],
-                    ),
-                    SizedBox(height: size.height*0.02,),
-                    myDivider(context),
-                    SizedBox(height: size.height*0.03,),
-                    defaultButton(
-                      context,
-                      function: () {
-                        navigateTo(context,const EditProfileScreen());
-                      },
-                      text: 'edit profile',
-                      rounder: BorderRadius.circular(10),
-                      width: size.width * 0.5,
-                    ),
-
-
-
-                  ],
+                        ],
+                      ),
+                      SizedBox(
+                        height: size.height * 0.02,
+                      ),
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            'assets/icons/report.svg',
+                            width: 20.sp,
+                          ),
+                          Text(
+                            ' Status : ',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: size.height * 0.02,
+                      ),
+                      Column(
+                        children: [
+                          Text(
+                            "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: size.height * 0.02,
+                      ),
+                      myDivider(context),
+                      SizedBox(
+                        height: size.height * 0.03,
+                      ),
+                      defaultButton(
+                        context,
+                        function: () {
+                          navigateTo(context, const EditProfileScreen());
+                        },
+                        text: 'edit profile',
+                        rounder: BorderRadius.circular(10),
+                        width: size.width * 0.5,
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),),
+            ),
           ],
         ),
       ),

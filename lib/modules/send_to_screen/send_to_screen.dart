@@ -12,8 +12,8 @@ class SendToScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body:Padding(
-        padding:EdgeInsets.symmetric(horizontal: size.width*0.05),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
         child: Column(
           children: [
             SizeBoxStart(context),
@@ -38,30 +38,38 @@ class SendToScreen extends StatelessWidget {
                     fontSize: 25.sp,
                     fontWeight: FontWeight.w400,
                   ),
-                )
+                ),
+                const Spacer(),
+                SvgPicture.asset(
+                  'assets/icons/notification.svg',
+                  width: size.width * 0.07,
+                ),
               ],
             ),
-            SizedBox(height: size.height*0.15,),
+            SizedBox(
+              height: size.height * 0.15,
+            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 InkWell(
-                  onTap: (){
-                    navigateTo(context,const SendToMyselfScreen());
+                  onTap: () {
+                    navigateTo(context, const SendToMyselfScreen());
                   },
                   child: Container(
-                    height: size.height*0.09,
+                    height: size.height * 0.09,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      color:const Color(0xffF5F5F5),
+                      color: const Color(0xffF5F5F5),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: size.width*0.05),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: size.width * 0.05),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                              'Gift For Myself',
+                            'Gift For Myself',
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontFamily: 'Poppins',
@@ -74,24 +82,27 @@ class SendToScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: size.height*0.07,),
+                SizedBox(
+                  height: size.height * 0.07,
+                ),
                 InkWell(
-                  onTap: (){
-                    navigateTo(context,const SendToOtherScreen());
+                  onTap: () {
+                    navigateTo(context, const SendToOtherScreen());
                   },
                   child: Container(
-                    height: size.height*0.09,
+                    height: size.height * 0.09,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      color:const Color(0xffF5F5F5),
+                      color: const Color(0xffF5F5F5),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: size.width*0.05),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: size.width * 0.05),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                              'Send To Others',
+                            'Send To Others',
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontFamily: 'Poppins',
