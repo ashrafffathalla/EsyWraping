@@ -6,8 +6,10 @@ import 'package:ad_samy/modules/description_screen/description_screen.dart';
 import 'package:ad_samy/modules/gift%20information_screen/gift_information_screen.dart';
 import 'package:ad_samy/modules/login_screen/login_screen.dart';
 import 'package:ad_samy/modules/menu_screen/menu_screen.dart';
+import 'package:ad_samy/modules/order_track_screen/order_track_screen.dart';
 import 'package:ad_samy/modules/profile_screen/profile_screen.dart';
 import 'package:ad_samy/modules/reset_password_screen/reset_password_screen.dart';
+import 'package:ad_samy/modules/send_to_screen/send_to_screen.dart';
 import 'package:ad_samy/modules/sendto_other_screen/send_toother_screen.dart';
 import 'package:ad_samy/modules/special_event_invoice/special_eventI_invoice_screen.dart';
 import 'package:ad_samy/modules/special_event_screen/special_event_screen.dart';
@@ -52,7 +54,7 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(
                 scaffoldBackgroundColor: Colors.white,
               ),
-              home: const ProfileScreen(),
+              home: const SplashScreen(),
             ),);
   }
 }

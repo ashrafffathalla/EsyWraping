@@ -99,6 +99,11 @@ class ProfileScreen extends StatelessWidget {
                         ),
                         Text(
                           '01012405566',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ],
                     ),
@@ -133,7 +138,7 @@ class ProfileScreen extends StatelessWidget {
                       children: [
                         Icon(Icons.pin_drop),
                         Text(
-                          'Adress : ',
+                          'Address : ',
                           style: TextStyle(
                             fontFamily: 'Poppins',
                             fontSize: 10.sp,
@@ -143,6 +148,11 @@ class ProfileScreen extends StatelessWidget {
                         ),
                         Text(
                           '8 street city',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ],
                     ),
@@ -152,6 +162,8 @@ class ProfileScreen extends StatelessWidget {
                         SvgPicture.asset(
                           'assets/icons/id.svg',
                           width: 20.sp,
+                          height: 7,
+
                         ),
                         Text(
                           'id : ',

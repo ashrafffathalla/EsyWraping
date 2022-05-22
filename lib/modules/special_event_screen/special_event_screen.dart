@@ -1,3 +1,4 @@
+import 'package:ad_samy/modules/special_event_invoice/special_eventI_invoice_screen.dart';
 import 'package:ad_samy/shared/components/component.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -293,6 +294,7 @@ class SpecialEventScreen extends StatelessWidget {
                           /// ON TAB BUTTON Section
                           GestureDetector(
                             onTap: (){
+                              navigateTo(context,const SpecialEventInvoiceScreen());
                               ///TODO
                             },
                             child: Container(
@@ -326,7 +328,6 @@ class SpecialEventScreen extends StatelessWidget {
                                       SvgPicture.asset('assets/icons/arrow-white.svg')
                                     ],
                                   ),
-
                                 ],
                               ),
                             ),
