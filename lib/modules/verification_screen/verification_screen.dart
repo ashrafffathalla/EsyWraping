@@ -229,7 +229,7 @@ class VerificationScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                   child: FlatButton(
                     onPressed: () {
-                      navigateTo(context, AddressScreen());
+                      navigateTo(context,const GiftInformationScreen());
                     },
                     color: kPrimaryColor,
                     child: Text(

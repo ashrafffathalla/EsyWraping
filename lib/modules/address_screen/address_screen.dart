@@ -1,3 +1,4 @@
+import 'package:ad_samy/modules/checkout_screen/checkout_screen.dart';
 import 'package:ad_samy/shared/components/component.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -104,13 +105,15 @@ class AddressScreen extends StatelessWidget {
                                itemCount: 4,
                            ),
                          ),
-                         defaultButton(
-                           context,
-                           function: (){},
-                           text: 'NEXT',
-                           rounder: BorderRadius.circular(10),
-                           width: size.width/2,
-                         ),
+                         // defaultButton(
+                         //   context,
+                         //   function: (){
+                         //     navigateTo(context, )
+                         //   },
+                         //   text: 'NEXT',
+                         //   rounder: BorderRadius.circular(10),
+                         //   width: size.width/2,
+                         // ),
                          SizedBox(height: size.height*0.03,),
                        ],
                      ),
@@ -275,7 +278,9 @@ class AddressScreen extends StatelessWidget {
                           SizedBox(height: size.height*0.03,),
                           defaultButton(
                             context,
-                            function: (){},
+                            function: (){
+                              navigateTo(context,const CheckOutScreen());
+                            },
                             text: 'NEXT',
                             rounder: BorderRadius.circular(10),
                             width: size.width/2,
@@ -398,4 +403,5 @@ class AddressScreen extends StatelessWidget {
       ),
     ),
   );
+
 }

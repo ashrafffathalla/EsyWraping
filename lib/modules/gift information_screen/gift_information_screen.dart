@@ -1,7 +1,5 @@
 import 'package:ad_samy/modules/description_screen/description_screen.dart';
-import 'package:ad_samy/modules/sendto_other_screen/send_toother_screen.dart';
 import 'package:ad_samy/shared/components/component.dart';
-import 'package:ad_samy/shared/components/custom_checbox.dart';
 import 'package:ad_samy/shared/style/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

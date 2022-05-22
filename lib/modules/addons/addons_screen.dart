@@ -1,3 +1,5 @@
+import 'package:ad_samy/modules/address_screen/address_screen.dart';
+import 'package:ad_samy/modules/send_to_screen/send_to_screen.dart';
 import 'package:ad_samy/shared/components/component.dart';
 import 'package:ad_samy/shared/style/colors.dart';
 import 'package:flutter/material.dart';
@@ -154,7 +156,9 @@ class _AddonsScreenState extends State<AddonsScreen> {
                 children: [
                   defaultButton(
                     context,
-                    function: (){},
+                    function: (){
+                      navigateTo(context,const SendToScreen());
+                    },
                     text: 'no',
                     rounder: BorderRadius.circular(10),
                     width: size.width/3,
@@ -162,7 +166,9 @@ class _AddonsScreenState extends State<AddonsScreen> {
                   SizedBox(width: size.width*0.03,),
                   defaultButton(
                     context,
-                    function: (){},
+                    function: (){
+                      navigateTo(context, const AddressScreen());
+                    },
                     text: 'Continue',
                     rounder: BorderRadius.circular(10),
                     width: size.width/3,
@@ -270,7 +276,6 @@ class _AddonsScreenState extends State<AddonsScreen> {
                           'assets/icons/minus.svg',
                       ),
                     ),
-
                   ],
                 ),
               ],

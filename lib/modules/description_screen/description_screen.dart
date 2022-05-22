@@ -1,3 +1,4 @@
+import 'package:ad_samy/modules/addons/addons_screen.dart';
 import 'package:ad_samy/shared/components/component.dart';
 import 'package:ad_samy/shared/components/custom_checbox.dart';
 import 'package:flutter/cupertino.dart';
@@ -97,7 +98,9 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
               ),
               defaultButton(
                 context,
-                function: () {},
+                function: () {
+                  navigateTo(context,const AddonsScreen());
+                },
                 text: 'next',
                 rounder: BorderRadius.circular(10),
                 width: size.width * 0.5,
