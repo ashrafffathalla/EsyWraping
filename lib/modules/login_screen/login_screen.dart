@@ -2,6 +2,7 @@ import 'package:ad_samy/modules/gift%20information_screen/gift_information_scree
 import 'package:ad_samy/modules/reset_password_screen/reset_password_screen.dart';
 import 'package:ad_samy/modules/sign_up/sign_up.dart';
 import 'package:ad_samy/modules/splash_screen/splash_screen.dart';
+import 'package:ad_samy/modules/start_screen/start_screen.dart';
 import 'package:ad_samy/modules/verification_screen/verification_screen.dart';
 import 'package:ad_samy/shared/components/component.dart';
 import 'package:flutter/cupertino.dart';
@@ -147,7 +148,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                   GestureDetector(
                                     onTap: () {
-                                      navigateTo(context, const SignupScreen());
+                                      navigateTo(context, const StartScreen());
                                     },
                                     child: Tab(
                                       child: Text(
