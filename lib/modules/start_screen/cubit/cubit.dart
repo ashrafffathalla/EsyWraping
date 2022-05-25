@@ -2,7 +2,9 @@ import 'package:ad_samy/modules/profile_screen/profile_screen.dart';
 import 'package:ad_samy/modules/start_screen/cubit/states.dart';
 import 'package:ad_samy/modules/start_screen/start_screen.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../gift information_screen/gift_information_screen.dart';
 
@@ -26,7 +28,10 @@ class AppStartScreenCubit extends Cubit<AppStartScreenStates>
 
     ),
     BottomNavigationBarItem(
-        icon: SvgPicture.asset('assets/icons/profile_path.svg'),
+        icon: Icon(
+            Icons.menu,
+          size: 32.sp,
+        ),
         label: 'Profile'
     ),
   ];

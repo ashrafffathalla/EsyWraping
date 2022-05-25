@@ -79,22 +79,15 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                 ],
               ),
               SizedBox(height: size.height*0.05,),
-              Image.asset(
-                  'assets/images/golden-gift.png',
-                fit: BoxFit.cover,
-              ),
-              SizedBox(height: size.height*0.02,),
-              Text(
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
-                  style: TextStyle(
-              color:const Color(0xff707070) ,
-                  fontSize:12.sp,
-                  fontWeight: FontWeight.w400,
-                  fontFamily: 'Poppins',
-                  ),
-              ),
               SizedBox(
-                height: size.height * 0.05,
+                child: ListView.separated(
+                  scrollDirection: Axis.vertical,
+                    physics:const BouncingScrollPhysics(),
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) => buildCard(size),
+                    separatorBuilder: (context, index) => SizedBox(height: size.height*0.01,),
+                    itemCount: 4,
+                ),
               ),
               defaultButton(
                 context,
@@ -105,10 +98,32 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                 rounder: BorderRadius.circular(10),
                 width: size.width * 0.5,
               ),
+              SizedBox(height: size.height*0.05,),
             ],
           ),
         ),
       ),
     );
   }
+  Widget buildCard(size)=>Column(
+    children: [
+      Image.asset(
+        'assets/images/golden-gift.png',
+        fit: BoxFit.cover,
+      ),
+      SizedBox(height: size.height*0.02,),
+      Text(
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        style: TextStyle(
+          color:const Color(0xff707070) ,
+          fontSize:12.sp,
+          fontWeight: FontWeight.w400,
+          fontFamily: 'Poppins',
+        ),
+      ),
+      SizedBox(
+        height: size.height * 0.05,
+      ),
+    ],
+  );
 }

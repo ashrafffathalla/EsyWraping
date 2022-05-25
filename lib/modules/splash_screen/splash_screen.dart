@@ -1,3 +1,4 @@
+import 'package:ad_samy/modules/login_screen/login_screen.dart';
 import 'package:ad_samy/modules/start_screen/start_screen.dart';
 import 'package:ad_samy/shared/components/component.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class SplashScreen extends StatelessWidget {
               GestureDetector(
                 onTap: (){
 
-                  navigateTo(context,const StartScreen());
+                  navigateTo(context,const LoginScreen());
                 },
                 child: Container(
                   width: size.width /1.25,

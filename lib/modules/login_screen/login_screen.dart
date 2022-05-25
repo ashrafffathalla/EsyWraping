@@ -245,7 +245,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           ///TODO
                                           if(formKey.currentState!.validate())
                                             {
-                                              navigateTo(context,const GiftInformationScreen());
+                                              navigateAndFinish(context,const StartScreen());
                                             }
                                         },
                                         text: 'Login',

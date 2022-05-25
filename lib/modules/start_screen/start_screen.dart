@@ -1,4 +1,6 @@
+import 'package:ad_samy/modules/gift%20information_screen/gift_information_screen.dart';
 import 'package:ad_samy/modules/login_screen/login_screen.dart';
+import 'package:ad_samy/modules/menu_screen/menu_screen.dart';
 import 'package:ad_samy/modules/special_event_screen/special_event_screen.dart';
 import 'package:ad_samy/modules/splash_screen/splash_screen.dart';
 import 'package:ad_samy/modules/start_screen/cubit/cubit.dart';
@@ -24,17 +26,68 @@ class StartScreen extends StatelessWidget {
         },
         builder: (context,state){
           return Scaffold(
-            bottomNavigationBar: BottomNavigationBar(
-              backgroundColor: Colors.white,
-              iconSize: 15,
-              elevation: 0,
-              currentIndex: AppStartScreenCubit.get(context).currentIndex,
-              type: BottomNavigationBarType.fixed,
-              onTap: (index){
-                AppStartScreenCubit.get(context).changeBottomNavBar(index);
-              },
-              items: AppStartScreenCubit.get(context).bottomItems,
-            ),
+            persistentFooterButtons: [
+              SizedBox(
+                width: double.infinity,
+
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    InkWell(
+                      onTap: (){
+                        navigateTo(context,const GiftInformationScreen());
+                      },
+                      child: Column(
+                        children: [
+                          SvgPicture.asset('assets/icons/list.svg'),
+                          Text(
+                              'Orders',
+                            style: TextStyle(
+                              fontSize: 12.sp,
+                              fontFamily: 'Poppins',
+                              color: Colors.grey
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    InkWell(
+                      onTap: (){
+                        navigateTo(context,const GiftInformationScreen());
+                      },
+                      child: Column(
+                        children: [
+                          SvgPicture.asset('assets/icons/add.svg',
+
+                          ),
+                        ],
+                      ),
+                    ),
+                    InkWell(
+                      onTap: (){
+                        navigateTo(context,const MenuScreen());
+                      },
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.menu,
+                            size: 32.sp,
+                          ),
+                          Text(
+                              'Orders',
+                            style: TextStyle(
+                              fontSize: 12.sp,
+                              fontFamily: 'Poppins',
+                              color: Colors.grey
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
             backgroundColor: Colors.white,
             body: SizedBox(
               width: double.infinity,
@@ -103,7 +156,7 @@ class StartScreen extends StatelessWidget {
                         SizedBox(height: size.height*0.02,),
                         GestureDetector(
                           onTap: (){
-                            navigateTo(context, const LoginScreen());
+                            navigateTo(context, const GiftInformationScreen());
                             ///TODO
                           },
                           child: Container(

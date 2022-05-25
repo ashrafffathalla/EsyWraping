@@ -1,6 +1,7 @@
 import 'package:ad_samy/shared/components/component.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../shared/style/colors.dart';
 
@@ -44,97 +45,64 @@ class ConnectUsScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text(
-                    'Do you have any question? \n feel free to contact us. \nWe will get back to you as soon as possible!',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      color: kPrimaryColor,
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w400,
+                  Flexible(
+                    child: Text(
+                      'We will get back to you as soon as possible!',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        color: kPrimaryColor,
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                   ),
 
                 ],
               ),
               SizedBox(height: size.height*0.03,),
-              Row(
-                children: [
-                  Text(
-                    'Subject',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w400,
-                      color: kPrimaryColor,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: size.height * 0.02,
-              ),
+
               Container(
                 child: Padding(
                   padding: EdgeInsets.only(
                     left: size.width * 0.04,
                     top: size.height * 0.02,
                   ),
-                  child: const TextField(
-                    decoration: InputDecoration.collapsed(
-                      hintText: 'Type Something...',
-                    ),
-                  ),
-                ),
-                width: size.width * 0.9,
-                height: size.height * 0.12,
-                decoration: BoxDecoration(
-                  color: Color(0xffFAF9F9),
-                  borderRadius: BorderRadius.circular(6),
-                ),
-              ),
-              SizedBox(height: size.height*0.03,),
-              Row(
-                children: [
-                  Text(
-                    'Your Message',
+                  child: Text(
+                    '+965 854 3214 542',
                     style: TextStyle(
+                      fontSize: 20.sp,
                       fontFamily: 'Poppins',
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w400,
                       color: kPrimaryColor,
                     ),
                   ),
-                ],
-              ),
-              SizedBox(
-                height: size.height * 0.02,
-              ),
-              Container(
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    left: size.width * 0.04,
-                    top: size.height * 0.02,
-                  ),
-                  child: const TextField(
-                    decoration: InputDecoration.collapsed(
-                      hintText: 'Type Your Message...',
-                    ),
-                  ),
                 ),
-                width: size.width * 0.9,
-                height: size.height * 0.23,
+                width: size.width * 0.8,
+                height: size.height * 0.07,
                 decoration: BoxDecoration(
-                  color: Color(0xffFAF9F9),
+                  color:const Color(0xffFAF9F9),
                   borderRadius: BorderRadius.circular(6),
                 ),
               ),
               SizedBox(height: size.height*0.05,),
-              defaultButton(
-                context,
-                function: () {},
-                text: 'Contact',
-                rounder: BorderRadius.circular(10),
-                width: size.width * 0.5,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                      'OR',
+                    style: TextStyle(
+                      fontSize: 20.sp,
+                      fontFamily: 'Poppins',
+                      color: kPrimaryColor,
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(height: size.height*0.03,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SvgPicture.asset('assets/icons/face_whats.svg')
+                ],
               ),
               SizedBox(height: size.height*0.05,),
             ],
