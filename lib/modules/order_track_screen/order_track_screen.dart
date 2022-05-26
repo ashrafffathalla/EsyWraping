@@ -1,3 +1,4 @@
+import 'package:ad_samy/modules/special_event_invoice/special_eventI_invoice_screen.dart';
 import 'package:ad_samy/shared/components/component.dart';
 import 'package:ad_samy/shared/style/colors.dart';
 import 'package:flutter/cupertino.dart';
@@ -123,7 +124,10 @@ class OrderTrackScreen extends StatelessWidget {
             SizedBox(height: size.height*0.05,),
             defaultButton(
               context,
-              function: () {},
+              function: () {
+                ///TODO
+                navigateTo(context,const SpecialEventInvoiceScreen());
+              },
               text: 'order Details',
               rounder: BorderRadius.circular(10),
               width: size.width * 0.5,

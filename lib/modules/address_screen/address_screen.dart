@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../shared/style/colors.dart';
+import '../check/check_screen.dart';
 import '../sign_up/sign_up.dart';
 
 class AddressScreen extends StatelessWidget {
@@ -117,21 +118,21 @@ class AddressScreen extends StatelessWidget {
                               itemCount: 4,
                             ),
                           ),
-                          // defaultButton(
-                          //   context,
-                          //   function: (){
-                          //     navigateTo(context, )
-                          //   },
-                          //   text: 'NEXT',
-                          //   rounder: BorderRadius.circular(10),
-                          //   width: size.width/2,
-                          // ),
+                          defaultButton(
+                            context,
+                            function: (){
+                              navigateTo(context,const CheckOutScreen());
+                            },
+                            text: 'NEXT',
+                            rounder: BorderRadius.circular(10),
+                            width: size.width/2,
+                          ),
                           SizedBox(
-                            height: size.height * 0.03,
+                            height: size.height * 0.05,
                           ),
                         ],
                       ),
-                      //// TAB 2 Start New Address
+                      /// TAB 2 Start New Address
                       Column(
                         children: [
                           SizedBox(
@@ -290,7 +291,7 @@ class AddressScreen extends StatelessWidget {
                           defaultButton(
                             context,
                             function: () {
-                              navigateTo(context, const CheckOutScreen());
+                              navigateTo(context, const CheckScreen());
                             },
                             text: 'NEXT',
                             rounder: BorderRadius.circular(10),

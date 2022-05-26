@@ -26,6 +26,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'modules/check/check_screen.dart';
 import 'modules/checkout_screen/checkout_screen.dart';
 import 'modules/send_to_myself_screen/send_to_myself_screen.dart';
 
@@ -59,7 +60,7 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(
                 scaffoldBackgroundColor: Colors.white,
               ),
-              home: const SplashScreen(),
+              home: const AddressScreen(),
             ),);
   }
 }

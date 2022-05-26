@@ -1,3 +1,4 @@
+import 'package:ad_samy/modules/order_track_screen/order_track_screen.dart';
 import 'package:ad_samy/shared/style/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -71,7 +72,7 @@ class ThankYouOrderScreen extends StatelessWidget {
               // Tab button CONTINUE PAYMENT
               GestureDetector(
                 onTap: (){
-                  ///TODO
+                  navigateTo(context,const OrderTrackScreen());
                 },
                 child: Padding(
                   padding:EdgeInsets.symmetric(horizontal: size.width*0.091,),
