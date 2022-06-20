@@ -100,43 +100,41 @@ class SendToMyselfScreen extends StatelessWidget {
                       height: size.height*0.01,
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        SizedBox(
-                          width: size.width/2.5,
-                          child: defaultFormField(
-                            context,
-                            controller: currentLocationController,
-                            type: TextInputType.number,
-                            validate:(value){
-                              if (value!.isEmpty) {
-                                return 'Pleas enter your Current Location';
-                              }
-                              return null;
-                            },
-                            label: '4578',
-
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          SizedBox(
+                            width: size.width / 2.5,
+                            child: defaultFormField(
+                              context,
+                              controller: currentLocationController,
+                              type: TextInputType.number,
+                              validate: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Pleas enter your Current Location';
+                                }
+                                return null;
+                              },
+                              label: '4578',
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          width: size.width/2.5,
-                          child: defaultFormField(
-                            context,
-                            controller: currentLocationController,
-                            type: TextInputType.number,
-                            validate:(value){
-                              if (value!.isEmpty) {
-                                return 'Pleas enter your Current Location';
-                              }
-                              return null;
-                            },
-                            label: '4578',
-
+                          SizedBox(
+                            width: size.width / 2.5,
+                            child: defaultFormField(
+                              context,
+                              controller: currentLocationController,
+                              type: TextInputType.number,
+                              validate: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Pleas enter your Current Location';
+                                }
+                                return null;
+                              },
+                              label: '4578',
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
+                        ],
+                      ),
+                      SizedBox(
                       height: size.height*0.02,
                     ),
                     Row(

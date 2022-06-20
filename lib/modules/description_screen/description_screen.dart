@@ -79,16 +79,7 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                 ],
               ),
               SizedBox(height: size.height*0.05,),
-              SizedBox(
-                child: ListView.separated(
-                  scrollDirection: Axis.vertical,
-                    physics:const BouncingScrollPhysics(),
-                    shrinkWrap: true,
-                    itemBuilder: (context, index) => buildCard(size),
-                    separatorBuilder: (context, index) => SizedBox(height: size.height*0.01,),
-                    itemCount: 4,
-                ),
-              ),
+              buildCard(size),
               defaultButton(
                 context,
                 function: () {

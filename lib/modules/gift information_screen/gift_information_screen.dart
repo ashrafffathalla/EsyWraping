@@ -30,17 +30,6 @@ class _GiftInformationScreenState extends State<GiftInformationScreen> {
         },
         builder: (context,state){
           return Scaffold(
-              bottomNavigationBar: BottomNavigationBar(
-              backgroundColor: Colors.white,
-              iconSize: 15,
-              elevation: 0,
-              currentIndex: AppGiftInformationCubit.get(context).currentIndex,
-              type: BottomNavigationBarType.fixed,
-              onTap: (index){
-                AppGiftInformationCubit.get(context).changeBottomNavBar(index);
-              },
-              items: AppGiftInformationCubit.get(context).bottomItems,
-            ),
             floatingActionButton: floatButton(),
             body: SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
@@ -253,17 +242,16 @@ class _GiftInformationScreenState extends State<GiftInformationScreen> {
                     SizedBox(
                       height: size.width * 0.025,
                     ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.27,
-                      child: ListView.separated(
-                        physics: const BouncingScrollPhysics(),
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) => cardBuilder(context),
-                        separatorBuilder: (context, index) => SizedBox(
-                          width: size.width * 0.01,
-                        ),
-                        itemCount: 4,
+                    ListView.separated(
+                      padding: EdgeInsets.zero,
+                      shrinkWrap: true,
+                      physics: const BouncingScrollPhysics(),
+                      scrollDirection: Axis.vertical,
+                      itemBuilder: (context, index) => cardBuilder(context),
+                      separatorBuilder: (context, index) => SizedBox(
+                        height: size.height * 0.05,
                       ),
+                      itemCount: 4,
                     ),
                     SizedBox(
                       height: size.width * 0.07,

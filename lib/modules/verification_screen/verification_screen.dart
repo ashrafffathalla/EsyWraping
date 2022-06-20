@@ -1,6 +1,7 @@
 import 'package:ad_samy/modules/address_screen/address_screen.dart';
 import 'package:ad_samy/modules/gift%20information_screen/gift_information_screen.dart';
 import 'package:ad_samy/modules/sendto_other_screen/send_toother_screen.dart';
+import 'package:ad_samy/shared/components/bin_code_field.dart';
 import 'package:ad_samy/shared/components/component.dart';
 import 'package:ad_samy/shared/style/colors.dart';
 import 'package:flutter/material.dart';
@@ -65,137 +66,8 @@ class VerificationScreen extends StatelessWidget {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    height: size.height * 0.052,
-                    width: size.width * 0.1,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: const Color(0xff707070), // red as border color
-                      ),
-                    ),
-                    child: TextFormField(
-                      onChanged: (value) {
-                        if (value.length == 1) {
-                          FocusScope.of(context).nextFocus();
-                        }
-                      },
-                      textAlign: TextAlign.center,
-                      style: Theme
-                          .of(context)
-                          .textTheme
-                          .headline6,
-                      keyboardType: TextInputType.number,
-                      inputFormatters: [
-                        LengthLimitingTextInputFormatter(1),
-                        FilteringTextInputFormatter.digitsOnly,
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: size.height * 0.052,
-                    width: size.width * 0.1,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: const Color(0xff707070), // red as border color
-                      ),
-                    ),
-                    child: TextFormField(
-                      onChanged: (value) {
-                        if (value.length == 1) {
-                          FocusScope.of(context).nextFocus();
-                        }
-                      },
-                      textAlign: TextAlign.center,
-                      style: Theme
-                          .of(context)
-                          .textTheme
-                          .headline6,
-                      keyboardType: TextInputType.number,
-                      inputFormatters: [
-                        LengthLimitingTextInputFormatter(1),
-                        FilteringTextInputFormatter.digitsOnly,
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: size.height * 0.052,
-                    width: size.width * 0.1,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: const Color(0xff707070), // red as border color
-                      ),
-                    ),
-                    child: TextFormField(
-                      onChanged: (value) {
-                        if (value.length == 1) {
-                          FocusScope.of(context).nextFocus();
-                        }
-                      },
-                      textAlign: TextAlign.center,
-                      style: Theme
-                          .of(context)
-                          .textTheme
-                          .headline6,
-                      keyboardType: TextInputType.number,
-                      inputFormatters: [
-                        LengthLimitingTextInputFormatter(1),
-                        FilteringTextInputFormatter.digitsOnly,
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: size.height * 0.052,
-                    width: size.width * 0.1,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: const Color(0xff707070), // red as border color
-                      ),
-                    ),
-                    child: TextFormField(
-                      onChanged: (value) {
-                        if (value.length == 1) {
-                          FocusScope.of(context).nextFocus();
-                        }
-                      },
-                      textAlign: TextAlign.center,
-                      style: Theme
-                          .of(context)
-                          .textTheme
-                          .headline6,
-                      keyboardType: TextInputType.number,
-                      inputFormatters: [
-                        LengthLimitingTextInputFormatter(1),
-                        FilteringTextInputFormatter.digitsOnly,
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: size.height * 0.052,
-                    width: size.width * 0.1,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: const Color(0xff707070), // red as border color
-                      ),
-                    ),
-                    child: TextFormField(
-                      onChanged: (value) {
-                        if (value.length == 1) {
-                          FocusScope.of(context).nextFocus();
-                        }
-                      },
-                      textAlign: TextAlign.center,
-                      style: Theme
-                          .of(context)
-                          .textTheme
-                          .headline6,
-                      keyboardType: TextInputType.number,
-                      inputFormatters: [
-                        LengthLimitingTextInputFormatter(1),
-                        FilteringTextInputFormatter.digitsOnly,
-                      ],
-                    ),
-                  ),
+                children:const[
+                   pinCode(),
                 ],
               ),
               SizedBox(

@@ -106,17 +106,18 @@ Widget SizeBoxStart(context) => SizedBox(
     );
 // Start CircleAvatar colorsPalette
 Widget colorsPalette({
- required Color backgroundColor ,
-})=>CircleAvatar(
-  backgroundColor: backgroundColor,
-  radius: 15,
-);
+  required Color backgroundColor,
+}) =>
+    CircleAvatar(
+      backgroundColor: backgroundColor,
+      radius: 15,
+    );
 // end CircleAvatar colors colorsPalette
 
 //Start Divider Used IN cartScreen
-Widget myDivider(context)=>Container(
-  height: 1,
-  color:const Color(0xFF707070),
-  width: MediaQuery.of(context).size.width-0.04,
-);
+Widget myDivider(context) => Container(
+      height: 1,
+      color: const Color(0xFF707070),
+      width: MediaQuery.of(context).size.width - 0.04,
+    );
 //End Divider Used IN cartScreen

@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../shared/components/component.dart';
 import '../../shared/style/colors.dart';
+
 class SpecialEventInvoiceScreen extends StatelessWidget {
   const SpecialEventInvoiceScreen({Key? key}) : super(key: key);
 
@@ -12,14 +13,14 @@ class SpecialEventInvoiceScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
-        physics:const BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
             SizeBoxStart(context),
             Center(
               child: Container(
-                width: size.width*0.91,
-                height: size.height/4,
+                width: size.width * 0.91,
+                height: size.height / 4,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -31,44 +32,46 @@ class SpecialEventInvoiceScreen extends StatelessWidget {
                             Positioned(
                               child: SvgPicture.asset('assets/icons/elips.svg'),
                             ),
-                            Padding(
-                              padding:  EdgeInsets.symmetric(
-                                horizontal: size.width*0.06,
-                                vertical: size.width*0.062,
-                              ),
-                              child: Positioned(
-                                child: SvgPicture.asset('assets/icons/event.svg'),
+                            Positioned(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: size.width * 0.06,
+                                  vertical: size.width * 0.062,
+                                ),
+                                child:
+                                    SvgPicture.asset('assets/icons/event.svg'),
                               ),
                             ),
                           ],
                         ),
-                        SizedBox(width:size.width*0.03,),
+                        SizedBox(
+                          width: size.width * 0.03,
+                        ),
                         Column(
                           children: [
                             Text(
                               'Special Event invoice',
                               style: TextStyle(
-                                  color:kPrimaryColor,
+                                  color: kPrimaryColor,
                                   fontSize: 20.sp,
                                   fontWeight: FontWeight.w400,
-                                  fontFamily: 'Poppins'
-                              ),
+                                  fontFamily: 'Poppins'),
                             ),
-
                           ],
                         ),
                       ],
                     ),
-
                   ],
                 ),
                 decoration: BoxDecoration(
-                  color:const Color(0xffF5F5F5),
+                  color: const Color(0xffF5F5F5),
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),
             ),
-            SizedBox(height: size.height*0.01,),
+            SizedBox(
+              height: size.height * 0.01,
+            ),
             Text(
               'Your Order',
               style: TextStyle(
@@ -78,9 +81,11 @@ class SpecialEventInvoiceScreen extends StatelessWidget {
                 fontWeight: FontWeight.w400,
               ),
             ),
-            SizedBox(height: size.height*0.02,),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
             Padding(
-              padding:EdgeInsets.symmetric(horizontal: size.width*0.05),
+              padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
               child: Column(
                 children: [
                   Row(
@@ -150,27 +155,29 @@ class SpecialEventInvoiceScreen extends StatelessWidget {
               'assets/images/gived.png',
               fit: BoxFit.cover,
             ),
+
             /// ON TAB BUTTON Section
-            SizedBox(height: size.height*0.02,),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
             Padding(
-              padding:EdgeInsets.symmetric(horizontal: size.width*0.05),
+              padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
               child: GestureDetector(
-                onTap: (){
+                onTap: () {
                   ///TODO
                 },
                 child: Container(
-                  height: size.height*0.08,
+                  height: size.height * 0.08,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(7),
-                      gradient:const LinearGradient(
+                      gradient: const LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
                           Color(0xffAF1E5A),
                           Color(0xffEAA8BF),
                         ],
-                      )
-                  ),
+                      )),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -182,7 +189,7 @@ class SpecialEventInvoiceScreen extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'Poppins',
                               color: Colors.white,
-                              fontSize:15.sp,
+                              fontSize: 15.sp,
                               fontWeight: FontWeight.w600,
                             ),
                           ),

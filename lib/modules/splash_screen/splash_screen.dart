@@ -26,7 +26,7 @@ class SplashScreen extends StatelessWidget {
               GestureDetector(
                 onTap: (){
 
-                  navigateTo(context,const LoginScreen());
+                  navigateTo(context, LoginScreen());
                 },
                 child: Container(
                   width: size.width /1.25,
@@ -48,9 +48,7 @@ class SplashScreen extends StatelessWidget {
                 ),
 
               ),
-              SizedBox(
-                height: size.height*0.01,
-              ),
+
             ],
           ),
         ),
