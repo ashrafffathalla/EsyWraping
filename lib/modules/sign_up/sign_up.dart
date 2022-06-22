@@ -1,5 +1,7 @@
 import 'package:ad_samy/modules/sign_up/bloc/cubit.dart';
 import 'package:ad_samy/modules/sign_up/bloc/states.dart';
+import 'package:ad_samy/modules/verification_screen/bloc/cubit.dart';
+import 'package:ad_samy/modules/verification_screen/verification_screen.dart';
 import 'package:ad_samy/shared/style/colors.dart';
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +11,6 @@ import '../../shared/components/component.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import '../../shared/components/coustom_snackpar.dart';
 import '../login_screen/login_screen.dart';
-
 class SignupScreen extends StatelessWidget {
    SignupScreen({Key? key}) : super(key: key);
   var nameController = TextEditingController();
@@ -56,9 +57,18 @@ class SignupScreen extends StatelessWidget {
                           type: ContentType.success,
                         ),
                       );
-                      navigateAndFinish(
-                          context,  LoginScreen(),
-                      );
+                      VerificationCubit.get(context).sendOTPCode(
+                          email: emailController.text.toString(),
+                          password: passwordController.text.toString())
+                          .then((value)
+                      {
+                        navigateAndFinish(
+                          context,
+                          VerificationScreen(
+                              email: RegisterCubit.get(context).email.toString(),
+                              password: RegisterCubit.get(context).password.toString()),
+                        );
+                      });
                     }else if(state is ErrorRegisterState){
                       ScaffoldMessenger.of(context)
                           .showSnackBar(
@@ -137,7 +147,10 @@ class SignupScreen extends StatelessWidget {
                                 height: size.height*0.01,
                               ),
                               defaultFormField(
-                                context,
+                               context,
+                                onChange: (value){
+                                 cubit.onChangedUserName(value.toString());
+                                },
                                 controller: emailController,
                                 type: TextInputType.emailAddress,
                                 validate:(value){
@@ -201,6 +214,10 @@ class SignupScreen extends StatelessWidget {
                               ),
                               defaultFormField(
                                 context,
+                                onChange: (value){
+                                  cubit.onChangePassword(value.toString());
+                                },
+
                                 controller: passwordController,
                                 type: TextInputType.visiblePassword,
                                 validate:(value){

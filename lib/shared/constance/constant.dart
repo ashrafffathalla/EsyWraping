@@ -1,2 +1,2 @@
 
-const sharedToken='';
+String ? sharedToken;

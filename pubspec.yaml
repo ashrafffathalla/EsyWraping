@@ -44,7 +44,7 @@ dependencies:
   flutter_rating_bar: ^4.0.0
   awesome_snackbar_content: ^0.0.5
   pin_code_fields: ^7.4.0
-
+  argon_buttons_flutter: ^1.1.0
 
 dev_dependencies:
   flutter_test:

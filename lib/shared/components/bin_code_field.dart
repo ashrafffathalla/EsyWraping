@@ -1,5 +1,6 @@
 import 'package:ad_samy/shared/style/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class pinCode extends StatelessWidget {
@@ -9,30 +10,34 @@ class pinCode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PinCodeTextField(
-      onCompleted: (value) {
+    Size size = MediaQuery.of(context).size;
+    return Expanded(
+      child: PinCodeTextField(
+        onCompleted: (value) {
 
-      },
-      enableActiveFill: true,
-      keyboardType: TextInputType.number,
-      appContext: context,
-      length: 5,
-      onChanged: (value) {},
-      hintStyle:const TextStyle(
-        color: kPrimaryColor,
-      ),
-      showCursor: false,
-      pinTheme: PinTheme(
-        borderRadius: BorderRadius.circular(10),
-        fieldWidth: 60,
-        fieldHeight: 60,
-        selectedColor:Colors.white,
-        shape: PinCodeFieldShape.box,
-        activeColor:kPrimaryColor,
-        inactiveColor: Colors.grey[300],
-        activeFillColor: Colors.white,
-        inactiveFillColor: Colors.white,
-        selectedFillColor: Colors.grey[300],
+        },
+        enableActiveFill: true,
+
+        keyboardType: TextInputType.number,
+        appContext: context,
+        length: 5,
+        onChanged: (value) {},
+        hintStyle:const TextStyle(
+          color: Colors.white,
+        ),
+        showCursor: false,
+        pinTheme: PinTheme(
+          borderRadius: BorderRadius.circular(0),
+          fieldWidth: size.width*0.085,
+          fieldHeight: size.height*0.04,
+          selectedColor:kPrimaryColor.withOpacity(0.2),
+          shape: PinCodeFieldShape.box,
+          activeColor:kPrimaryColor,
+          inactiveColor: Colors.black,
+          activeFillColor: Colors.white,
+          inactiveFillColor: Colors.white,
+          selectedFillColor: Colors.white,
+        ),
       ),
     );
   }

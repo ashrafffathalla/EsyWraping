@@ -8,10 +8,19 @@ import '../../../models/signup_model.dart';
 
 class RegisterCubit extends Cubit<RegisterStates> {
   RegisterCubit() : super(InitialRegisterState());
+  String ? email;
+  String ? password;
 
   static RegisterCubit get(context) => BlocProvider.of(context);
 
   SignUpModel? signUpModel;
+
+  void onChangedUserName(String value){
+    email = value;
+  }
+  void onChangePassword(String value){
+    password = value;
+  }
 
   Future<void> registerUser({
     required String name,

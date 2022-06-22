@@ -27,12 +27,16 @@ class DioHelper {
   }
 
   static Future<Response> postData(
-      {required String methodUrl,
-
+      {
+        required String methodUrl,
         required Map<String, dynamic>  data}) async {
     dio.options.headers = {
       "Content-Type":"application/json",
-      "Authorization": "Bearer $sharedToken",
+      "Authorization": "Bearer $sharedToken",//هاد بخزن فيه ال token وهو لحاله اذا بتحتاج ال توكين بياخده اذا ما بلزمه توكين بيعمل حاله مش شايفه--
+      //عندي سوال كمان ؟ كيف اخليه لو عامل LOgin يخش علي طول مايحتاج يعمل تاني Login
+      // سهلة لما تعمل login بتعمل variable اسمه is login  وبعدها ؟؟
+      //وبتعطيه قيمة ترو طبعا بتخزنها بال shared preference
+      //و عند ال main بتشيك على هاي القيمة اذا ترو بتحكيلة ال hom
     };
     return await dio.post(
       methodUrl,

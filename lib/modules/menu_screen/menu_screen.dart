@@ -4,6 +4,7 @@ import 'package:ad_samy/modules/gift%20information_screen/gift_information_scree
 import 'package:ad_samy/modules/languge_screen/languge_screen.dart';
 import 'package:ad_samy/modules/profile_screen/profile_screen.dart';
 import 'package:ad_samy/shared/components/component.dart';
+import 'package:ad_samy/shared/constance/signout_method.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -150,19 +151,24 @@ class MenuScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: size.height*0.04,),
-              Row(
-                children: [
-                  SvgPicture.asset('assets/icons/logout.svg'),
-                  SizedBox(width: size.width*0.02,),
-                  Text(
-                    'Logout',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 25.sp,
-                      fontWeight: FontWeight.w400,
+              InkWell(
+                onTap: (){
+                  signOut(context);
+                },
+                child: Row(
+                  children: [
+                    SvgPicture.asset('assets/icons/logout.svg'),
+                    SizedBox(width: size.width*0.02,),
+                    Text(
+                      'Logout',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 25.sp,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               SizedBox(height: size.height*0.03,),
             ],

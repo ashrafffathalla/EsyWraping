@@ -11,11 +11,14 @@ Widget defaultFormField(
   required FormFieldValidator<String>? validate,
   required String label,
   final VoidCallback? onTab,
+      final Function(String?)? onChange,
+
   final VoidCallback? suffixPressed,
   bool isClickable = true,
   final VoidCallback? onSubmit,
 }) =>
     TextFormField(
+      onChanged: onChange,
       controller: controller,
       keyboardType: type,
       obscureText: isPassword,

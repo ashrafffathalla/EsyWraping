@@ -74,7 +74,7 @@ class StartScreen extends StatelessWidget {
                             size: 32.sp,
                           ),
                           Text(
-                              'Orders',
+                              'Menu',
                             style: TextStyle(
                               fontSize: 12.sp,
                               fontFamily: 'Poppins',

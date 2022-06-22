@@ -4,6 +4,8 @@ import 'package:ad_samy/modules/reset_password_screen/reset_password_screen.dart
 import 'package:ad_samy/modules/sign_up/sign_up.dart';
 import 'package:ad_samy/modules/start_screen/start_screen.dart';
 import 'package:ad_samy/shared/components/component.dart';
+import 'package:ad_samy/shared/constance/constant.dart';
+import 'package:ad_samy/shared/network/local/shared_preference.dart';
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -173,6 +175,10 @@ class LoginScreen extends StatelessWidget {
                                 child: BlocConsumer<LoginCubit, LoginStates>(
                                   listener: (context, state) {
                                     if (state is SuccessLoginState) {
+                                      // CacheHelper.saveData(
+                                      //     key: sharedToken!,
+                                      //     value:state.model.text.token,
+                                      // );
                                       if (state.loginModel.message == 'OK') {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
@@ -330,7 +336,7 @@ class LoginScreen extends StatelessWidget {
                                               onTap: () {
                                                 ///TODO
                                                 navigateTo(context,
-                                                    const ResetPasswordScreen());
+                                                     ResetPasswordScreen());
                                               },
                                               child: Text(
                                                 'Forget Password?',
