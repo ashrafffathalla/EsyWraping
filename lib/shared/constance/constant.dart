@@ -1,2 +1,1 @@
-
-String ? sharedToken;
+ String? sharedToken ;

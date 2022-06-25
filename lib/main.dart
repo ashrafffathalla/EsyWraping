@@ -17,9 +17,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'modules/login_screen/login_screen.dart';
 import 'modules/reset_password_screen/enter_email/enter_email_screen.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   DioHelper.init();
+  await CacheHelper.init();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -28,7 +29,7 @@ void main() {
   ));
 
   Widget startWidget;
-
+  final token = CacheHelper.getData(key: 'sharedToken');
   if (sharedToken != null) {
     startWidget =  const StartScreen();
   } else {
@@ -39,13 +40,15 @@ void main() {
       runApp( MyApp(start: startWidget,));
     },
     blocObserver: SimpleBlocObserver(),
+
   );
 }
 
 class MyApp extends StatelessWidget {
   Widget start;
    MyApp({Key? key, required this.start}) : super(key: key);
-   final token = CacheHelper.getData(key: sharedToken!);
+   //final token = CacheHelper.getData(key: sharedToken!);
+
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(

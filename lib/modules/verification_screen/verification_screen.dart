@@ -80,7 +80,8 @@ class VerificationScreen extends StatelessWidget {
                         EdgeInsets.symmetric(horizontal: size.width * 0.2),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: const [
+                      children: const
+                      [
                         pinCode(),
                       ],
                     ),

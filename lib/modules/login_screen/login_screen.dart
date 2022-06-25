@@ -1,10 +1,10 @@
 import 'package:ad_samy/modules/login_screen/cubit/cubit.dart';
 import 'package:ad_samy/modules/login_screen/cubit/states.dart';
+import 'package:ad_samy/modules/reset_password_screen/enter_email/enter_email_screen.dart';
 import 'package:ad_samy/modules/reset_password_screen/reset_password_screen.dart';
 import 'package:ad_samy/modules/sign_up/sign_up.dart';
 import 'package:ad_samy/modules/start_screen/start_screen.dart';
 import 'package:ad_samy/shared/components/component.dart';
-import 'package:ad_samy/shared/constance/constant.dart';
 import 'package:ad_samy/shared/network/local/shared_preference.dart';
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/cupertino.dart';
@@ -174,11 +174,13 @@ class LoginScreen extends StatelessWidget {
                                 create: (BuildContext context) => LoginCubit(),
                                 child: BlocConsumer<LoginCubit, LoginStates>(
                                   listener: (context, state) {
+                                    // sharedToken = state.model.token.toString();
                                     if (state is SuccessLoginState) {
-                                      // CacheHelper.saveData(
-                                      //     key: sharedToken!,
-                                      //     value:state.model.text.token,
-                                      // );
+                                      CacheHelper.saveData(
+                                          key: 'sharedToken',
+                                          value:true,
+                                          //value:state.model.text.token,
+                                      );
                                       if (state.loginModel.message == 'OK') {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
@@ -276,7 +278,7 @@ class LoginScreen extends StatelessWidget {
                                                 }
                                                 return null;
                                               },
-                                              label: 'Mobile Number/Email',
+                                              label: 'Password',
                                             ),
                                             SizedBox(
                                               height: size.height * 0.03,
@@ -336,7 +338,7 @@ class LoginScreen extends StatelessWidget {
                                               onTap: () {
                                                 ///TODO
                                                 navigateTo(context,
-                                                     ResetPasswordScreen());
+                                                     EnterEmailScreen());
                                               },
                                               child: Text(
                                                 'Forget Password?',
@@ -349,37 +351,37 @@ class LoginScreen extends StatelessWidget {
                                                 ),
                                               ),
                                             ),
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Text(
-                                                  'Create new account ',
-                                                  style: TextStyle(
-                                                    fontFamily: 'Poppins',
-                                                    fontSize: 17.sp,
-                                                    fontWeight: FontWeight.w400,
-                                                    color: Colors.black,
-                                                  ),
-                                                ),
-                                                InkWell(
-                                                  onTap: () {
-                                                    navigateTo(context,
-                                                        SignupScreen());
-                                                  },
-                                                  child: Text(
-                                                    'Signup',
-                                                    style: TextStyle(
-                                                      fontFamily: 'Poppins',
-                                                      fontSize: 17.sp,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      color: Color(0xff041E9E),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
+                                            // Row(
+                                            //   mainAxisAlignment:
+                                            //       MainAxisAlignment.center,
+                                            //   children: [
+                                            //     Text(
+                                            //       'Create new account ',
+                                            //       style: TextStyle(
+                                            //         fontFamily: 'Poppins',
+                                            //         fontSize: 17.sp,
+                                            //         fontWeight: FontWeight.w400,
+                                            //         color: Colors.black,
+                                            //       ),
+                                            //     ),
+                                            //     InkWell(
+                                            //       onTap: () {
+                                            //         navigateTo(context,
+                                            //             SignupScreen());
+                                            //       },
+                                            //       child: Text(
+                                            //         'Signup',
+                                            //         style: TextStyle(
+                                            //           fontFamily: 'Poppins',
+                                            //           fontSize: 17.sp,
+                                            //           fontWeight:
+                                            //               FontWeight.w400,
+                                            //           color: Color(0xff041E9E),
+                                            //         ),
+                                            //       ),
+                                            //     ),
+                                            //   ],
+                                            // ),
                                           ],
                                         ),
                                       ),
