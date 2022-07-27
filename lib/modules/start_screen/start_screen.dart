@@ -30,7 +30,7 @@ class StartScreen extends StatelessWidget {
           return ConditionalBuilder(
             condition: cubit.homeModel != null,
             builder: (context) => Scaffold(
-              persistentFooterButtons: [ // null safty هلا منشوف وين
+              persistentFooterButtons: [
                 SizedBox(
                   width: double.infinity,
                   child: Row(
